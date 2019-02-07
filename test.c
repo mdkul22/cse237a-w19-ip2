@@ -16,14 +16,14 @@ pinMode(LEDPin, OUTPUT);
 
 while(1){
 val = digitalRead(KNOCKPin);
-if(val == 1){
+if(val == 0){
 digitalWrite(LEDPin, HIGH);
-delay(500);
+delay(1000);
 printf("Entered Knock..\n");
 }
 else{
 digitalWrite(LEDPin, LOW);
-delay(500);
+delay(1000);
 printf("No Knock...\n");
 }
 }

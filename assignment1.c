@@ -29,11 +29,16 @@ void init_sensors(SharedVariable* sv) {
 }
 
 void body_button(SharedVariable* sv) {
-	sv->bProgramExit = (sv->bProgramExit+1)%2;
+	int value = digitalRead(PIN_BUTTON);
+	if(value==LOW){
+	sv->bProgramExit = 1;
+	printf("body button toggled\n");
+	}
 }
 
 void body_threecolor(SharedVariable* sv) {
 	if(sv->bProgramExit){
+		printf("DIP is 0");
 		softPwmWrite(PIN_DIP_BLU, 0);
 		softPwmWrite(PIN_DIP_RED, 0);
 		softPwmWrite(PIN_DIP_GRN, 0);
@@ -56,11 +61,9 @@ void body_big(SharedVariable* sv) {
 	int val = digitalRead(PIN_BIG);
 	if(val){
 		sv->big_mic = 1;
-		delay(500);
 	}
 	else{
 		sv->big_mic = 0;
-		delay(500);
 	}
 }
 
@@ -68,11 +71,10 @@ void body_small(SharedVariable* sv) {
 	int val = digitalRead(PIN_SMALL);
 	if(val){
 		sv->small_mic = 1;
-		delay(500);
+		printf("Small mic active");
 	}
 	else{
 		sv->small_mic = 0;
-		delay(500);
 	}
 }
 
@@ -80,12 +82,11 @@ void body_touch(SharedVariable* sv) {
 	int val = digitalRead(PIN_TOUCH);
 	if(val){
 		sv->touch = 1;
-		delay(500);
 	}
 	else{
 		sv->touch = 0;
-		delay(500);
 	}
+	delay(500);
 }
 
 void body_rgbcolor(SharedVariable* sv) {
@@ -96,24 +97,24 @@ void body_rgbcolor(SharedVariable* sv) {
 	}
 	else{
 		if(sv->small_mic==0&&sv->touch==0){
-			softPwmWrite(PIN_DIP_BLU, 0x00);
-			softPwmWrite(PIN_DIP_RED, 0xFF);
-			softPwmWrite(PIN_DIP_GRN, 0x00);
+			softPwmWrite(PIN_SMD_BLU, 0x00);
+			softPwmWrite(PIN_SMD_RED, 0xFF);
+			softPwmWrite(PIN_SMD_GRN, 0x00);
 		}
 		else if(sv->small_mic==1&&sv->touch==0){
-			softPwmWrite(PIN_DIP_BLU, 0xC8);
-			softPwmWrite(PIN_DIP_RED, 0xEE);
-			softPwmWrite(PIN_DIP_GRN, 0x00);
+			softPwmWrite(PIN_SMD_BLU, 0xC8);
+			softPwmWrite(PIN_SMD_RED, 0xEE);
+			softPwmWrite(PIN_SMD_GRN, 0x00);
 		}
 		else if(sv->small_mic==0&&sv->touch==1){
-			softPwmWrite(PIN_DIP_BLU, 0x00);
-			softPwmWrite(PIN_DIP_RED, 0x80);
-			softPwmWrite(PIN_DIP_GRN, 0xFF);
+			softPwmWrite(PIN_SMD_BLU, 0x00);
+			softPwmWrite(PIN_SMD_RED, 0x80);
+			softPwmWrite(PIN_SMD_GRN, 0xFF);
 		}
 		else{
-			softPwmWrite(PIN_DIP_BLU, 0xFF);
-			softPwmWrite(PIN_DIP_RED, 0x00);
-			softPwmWrite(PIN_DIP_GRN, 0xFF);
+			softPwmWrite(PIN_SMD_BLU, 0xFF);
+			softPwmWrite(PIN_SMD_RED, 0x00);
+			softPwmWrite(PIN_SMD_GRN, 0xFF);
 		}
 	}
 }

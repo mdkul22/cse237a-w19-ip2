@@ -34,6 +34,7 @@ typedef struct shared_variable {
 	int small_mic; // once set to 1, small mic detected signal
 	int big_mic; // once set to 1, big mic detected signal
 	int touch; // once set to 1, metal touch sensed touch
+	int pause;
 } SharedVariable;
 
 

@@ -10,6 +10,7 @@ void init_shared_variable(SharedVariable* sv) {
 	sv->small_mic = 0;
 	sv->big_mic = 0;
 	sv->touch = 0;
+	sv->pause = 0;
 }
 
 void init_sensors(SharedVariable* sv) {
@@ -31,14 +32,14 @@ void init_sensors(SharedVariable* sv) {
 void body_button(SharedVariable* sv) {
 	int value = digitalRead(PIN_BUTTON);
 	if(value==LOW){
-	sv->bProgramExit = 1;
+	sv->pause = (sv->pause+1)%2;
 	printf("body button toggled\n");
 	}
 }
 
 void body_threecolor(SharedVariable* sv) {
-	if(sv->bProgramExit){
-		printf("DIP is 0");
+	if(sv->pause){
+		printf("DIP is 0\n");
 		softPwmWrite(PIN_DIP_BLU, 0);
 		softPwmWrite(PIN_DIP_RED, 0);
 		softPwmWrite(PIN_DIP_GRN, 0);
@@ -71,7 +72,7 @@ void body_small(SharedVariable* sv) {
 	int val = digitalRead(PIN_SMALL);
 	if(val){
 		sv->small_mic = 1;
-		printf("Small mic active");
+		printf("Small mic active\n");
 	}
 	else{
 		sv->small_mic = 0;
@@ -86,11 +87,10 @@ void body_touch(SharedVariable* sv) {
 	else{
 		sv->touch = 0;
 	}
-	delay(500);
 }
 
 void body_rgbcolor(SharedVariable* sv) {
-	if(sv->bProgramExit){
+	if(sv->pause){
 		softPwmWrite(PIN_SMD_BLU, 0);
 		softPwmWrite(PIN_SMD_RED, 0);
 		softPwmWrite(PIN_SMD_GRN, 0);
@@ -120,29 +120,27 @@ void body_rgbcolor(SharedVariable* sv) {
 }
 
 void body_aled(SharedVariable* sv) {
-	if(sv->bProgramExit)
-	{
+	if(sv->pause)
+	{	
+		printf("LED OFF\n");
 		digitalWrite(PIN_ALED, LOW);
 	}
 	else{
 		digitalWrite(PIN_ALED, HIGH);
-		printf("LED Active");
-		delay(1000);
 	}
 }
 
-void body_buzzer(SharedVariable* sv) {
-	if(sv->bProgramExit){
-		softPwmWrite(PIN_DIP_BLU, 0);
-		softPwmWrite(PIN_DIP_RED, 0);
-		softPwmWrite(PIN_DIP_GRN, 0);
+void body_buzzer(SharedVariable* sv){
+	if(sv->big_mic){
+		for(int i =0; i < 280; i++)
+		{
+			digitalWrite(PIN_BUZZER, HIGH);
+			delay(1);
+			digitalWrite(PIN_BUZZER, LOW);
+			delay(1);
+		}
 	}
 	else{
-		if(sv->big_mic){
-			digitalWrite(PIN_BUZZER, HIGH);
-		}
-		else{
-			digitalWrite(PIN_BUZZER, LOW);
-		}
+		digitalWrite(PIN_BUZZER, LOW);
 	}
 }

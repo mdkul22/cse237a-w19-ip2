@@ -31,6 +31,9 @@
 // If needed, you can add anything in this structure.
 typedef struct shared_variable {
 	int bProgramExit; // Once it is set to 1, the program will be terminated.
+	int small_mic; // once set to 1, small mic detected signal
+	int big_mic; // once set to 1, big mic detected signal
+	int touch; // once set to 1, metal touch sensed touch
 } SharedVariable;
 
 

@@ -34,25 +34,25 @@ void body_button(SharedVariable* sv) {
 	if(value==LOW){
 	sv->pause = (sv->pause+1)%2;
 	printf("body button toggled\n");
+	delay(1000);
 	}
 }
 
 void body_threecolor(SharedVariable* sv) {
 	if(sv->pause){
-		printf("DIP is 0\n");
 		softPwmWrite(PIN_DIP_BLU, 0);
 		softPwmWrite(PIN_DIP_RED, 0);
 		softPwmWrite(PIN_DIP_GRN, 0);
 	}
 	else{
 		if(sv->small_mic){
-			softPwmWrite(PIN_DIP_BLU, 0x00);
-			softPwmWrite(PIN_DIP_RED, 0xFF);
+		  softPwmWrite(PIN_DIP_BLU, 0x00);
+		  softPwmWrite(PIN_DIP_RED, 0xFF);
 		  softPwmWrite(PIN_DIP_GRN, 0x00);
 		}
 		else{
-			softPwmWrite(PIN_DIP_BLU, 0xFF);
-			softPwmWrite(PIN_DIP_RED, 0x00);
+		  softPwmWrite(PIN_DIP_BLU, 0xFF);
+		  softPwmWrite(PIN_DIP_RED, 0x00);
 		  softPwmWrite(PIN_DIP_GRN, 0x00);
 		}
 	}

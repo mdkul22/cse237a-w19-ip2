@@ -20,7 +20,7 @@ void learn_workloads(SharedVariable* sv) {
 	// You need to calculate the execution time of each thread here.
 
 	// Thread functions for workloads: 
-	// thread_button, thread_twocolor, thread_temp, thread_track,
+	// thread_button, thread_threecolor, thread_big, thread_small,
 	// thread_touch, thread_rgbcolor, thread_aled, thread_buzzer
 
 	// Tip 1. You can call each workload function here like:

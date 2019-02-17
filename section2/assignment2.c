@@ -81,7 +81,6 @@ void learn_workloads(SharedVariable* sv) {
 	for(int j=0; j<8; j++)
 	{
 	sv->tasks[j] = j;
-	sv->pending[j] = 1;
 	}
 	for(int j = 0; j < 8; j++){
 		for(int p = j+1; p < 8; p++)
@@ -125,7 +124,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
     // You need to implement an energy-efficient EDF (Earliest Deadline First) scheduler.
 
 	// Tip 1. You may get the current time elapsed in the scheduler here like:
-	long long curTime = get_scheduler_elapsed_time_us();
+	//long long curTime = get_scheduler_elapsed_time_us();
 
 	// Also, do not make any interruptable / IO tasks in this function.
 	// You can use printfDBG instead of printf.
@@ -134,15 +133,13 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	// It selects a next thread using aliveTasks.
 	static int prev_selection = -1;
 	int i = prev_selection + 1;
-	int cycle = curTime%sv->hyperperiod;
-	printDBG("%d : cycle", cycle);
 	while(1) {
 		if (i == NUM_TASKS)
 			i = 0;
-		if(aliveTasks[i]==1)
+		if(aliveTasks[sv->tasks[i]==1)
 		{
-			prev_selection = i;
-			for(int j=0; j<8;j++)
+			prev_selection = sv->tasks[i];
+			for(int j=0; j<i;j++)
 			{
 				if(aliveTasks[j]==1 && j<i)
 				prev_selection = sv->tasks[j];
@@ -155,6 +152,6 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	// The retun value can be specified like this:
 	TaskSelection sel;
 	sel.task = prev_selection; // The thread ID which will be scheduled. i.e., 0(BUTTON) ~ 7(BUZZER)
-	sel.freq = 0; // Request the maximum frequency (if you want the minimum frequency, use 0 instead.)
+	sel.freq = 1; // Request the maximum frequency (if you want the minimum frequency, use 0 instead.)
   return sel;
 }

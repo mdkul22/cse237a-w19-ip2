@@ -84,6 +84,7 @@ void learn_workloads(SharedVariable* sv) {
 		util += sv->duration[i]/workloadDeadlines[i];
 		if(util>1)
 		printf("Its beyond 100%\n");
+		sv->tasks[i] = i;
 	}
 	for(int j = 0; j < 8; j++){
 		for(int p = j+1; p < 8; p++)

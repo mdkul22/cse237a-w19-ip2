@@ -99,7 +99,6 @@ void learn_workloads(SharedVariable* sv) {
 			}
 		}
 	}
-	printf("\n");
 	// Thread functions for workloads:
 	// thread_button, thread_threecolor, thread_big, thread_small,
 	// thread_touch, thread_rgbcolor, thread_aled, thread_buzzer

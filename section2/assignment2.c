@@ -18,8 +18,66 @@ void learn_workloads(SharedVariable* sv) {
 	// TODO: Fill the body
 	// This function is executed before the scheduling simulation.
 	// You need to calculate the execution time of each thread here.
+	long long time = 0;
+	long long duration = 0;
+	printf("Performing threads to check performance\n");
 
-	// Thread functions for workloads: 
+	printf("thread_button time in us");
+	time = get_current_time_us();
+	thread_button();
+	duration = get_current_time_us() - time;
+	printf("Duration: %lld", duration);
+	sv->duration[0] = duration;
+
+	printf("thread_threecolor time in us");
+	time = get_current_time_us();
+	thread_threecolor();
+	duration = get_current_time_us() - time;
+	printf("Duration: %lld", duration);
+	sv->duration[1] = duration;
+
+	printf("thread_big time in us");
+	time = get_current_time_us();
+	thread_big();
+	duration = get_current_time_us() - time;
+	printf("Duration: %lld", duration);
+	sv->duration[2] = duration;
+
+	printf("thread_small time in us");
+	time = get_current_time_us();
+	thread_small();
+	duration = get_current_time_us() - time;
+	printf("Duration: %lld", duration);
+	sv->duration[3] = duration;
+
+	printf("thread_touch time in us");
+	time = get_current_time_us();
+	thread_touch();
+	duration = get_current_time_us() - time;
+	printf("Duration: %lld", duration);
+	sv->duration[4] = duration;
+
+	printf("thread_rgbcolor time in us");
+	time = get_current_time_us();
+	thread_rgbcolor();
+	duration = get_current_time_us() - time;
+	printf("Duration: %lld", duration);
+	sv->duration[5] = duration;
+
+	printf("thread_aled time in us");
+	time = get_current_time_us();
+	thread_aled();
+	duration = get_current_time_us() - time;
+	printf("Duration: %lld", duration);
+	sv->duration[6] = duration;
+
+	printf("thread_buzzer time in us");
+	time = get_current_time_us();
+	thread_buzzer();
+	duration = get_current_time_us() - time;
+	printf("Duration: %lld", duration);
+	sv->duration[7] = duration;
+	// Thread functions for workloads:
 	// thread_button, thread_threecolor, thread_big, thread_small,
 	// thread_touch, thread_rgbcolor, thread_aled, thread_buzzer
 

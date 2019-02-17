@@ -7,36 +7,35 @@
 //
 // 1. Button
 #define PIN_BUTTON 0
-
-// 2. 2-Color LED
-#define PIN_YELLOW 1
-
-// 3. Temperature
-#define PIN_TEMP 4
-
-// 4. Tracking Sensor
-#define PIN_TRACK 5
-
-// 5. Touch Sensor
+// 2. Big audio sensor
+#define PIN_BIG 4
+// 3. Small audio sensor
+#define PIN_SMALL 5
+// 4. Touch Sensor
 #define PIN_TOUCH 6
-
-// 6. RGB(3-Color) LED
-#define PIN_RED 7
-#define PIN_GREEN 8
-#define PIN_BLUE 9
-
+// 5. DIP RGB LED (Dual In-line Package)
+#define PIN_DIP_RED 7
+#define PIN_DIP_GRN 8
+#define PIN_DIP_BLU 9
+// 6. SMD RGB LED (Surface Mount Device)
+#define PIN_SMD_RED 27
+#define PIN_SMD_GRN 28
+#define PIN_SMD_BLU 29
 // 7. Auto-flash Red
 #define PIN_ALED 12
-
 // 8. Buzzer
 #define PIN_BUZZER 13
-
 // B. Shared structure
 // All thread fuctions get a shared variable of the structure
 // as the function parameter.
 // If needed, you can add anything in this structure.
 typedef struct shared_variable {
 	int bProgramExit; // Once it is set to 1, the program will be terminated.
+	int small_mic; // once set to 1, small mic detected signal
+	int big_mic; // once set to 1, big mic detected signal
+	int touch; // once set to 1, metal touch sensed touch
+	int pause;
+	long long duration[8];
 } SharedVariable;
 
 
@@ -47,9 +46,9 @@ void init_shared_variable(SharedVariable* sv);
 void init_sensors(SharedVariable* sv);
 
 void body_button(SharedVariable* sv);
-void body_twocolor(SharedVariable* sv);
-void body_temp(SharedVariable* sv);
-void body_track(SharedVariable* sv);
+void body_threecolor(SharedVariable* sv);
+void body_big(SharedVariable* sv);
+void body_small(SharedVariable* sv);
 void body_touch(SharedVariable* sv);
 void body_rgbcolor(SharedVariable* sv);
 void body_aled(SharedVariable* sv);

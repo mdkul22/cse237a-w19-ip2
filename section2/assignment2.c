@@ -98,6 +98,7 @@ void learn_workloads(SharedVariable* sv) {
 				sv->tasks[p] = temp;
 			}
 		}
+		printf("%d\t", sv->tasks[j]);
 	}
 	// Thread functions for workloads:
 	// thread_button, thread_threecolor, thread_big, thread_small,

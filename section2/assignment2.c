@@ -140,8 +140,10 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 		if (i == NUM_TASKS)
 			i = 0;
 		if (aliveTasks[sv->tasks[i]] == 1)
+		{
 			prev_selection = sv->tasks[i];
 			break;
+		}
 		++i;
 	}
 	// The retun value can be specified like this:

@@ -89,12 +89,13 @@ void learn_workloads(SharedVariable* sv) {
 		for(int p = j; p < 8; p++)
 		{
 			int temp;
-			if(workloadDeadlines[j]>workloadDeadlines[p])
+			if(workloadDeadlines[p]<workloadDeadlines[j])
 			{
 				temp = sv->tasks[j];
 				sv->tasks[j] = p;
 				sv->tasks[p] = temp;
 			}
+			printf("%d\t", sv->tasks[j]);
 		}
 	}
 	// Thread functions for workloads:
@@ -137,7 +138,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 		if (i == NUM_TASKS)
 			i = 0;
 		if (aliveTasks[sv->tasks[i]] == 1)
-			prev_selection = i;
+			prev_selection = sv->tasks[i];
 		++i;
 	}
 	// The retun value can be specified like this:

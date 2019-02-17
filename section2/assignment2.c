@@ -78,6 +78,13 @@ void learn_workloads(SharedVariable* sv) {
 	duration = get_current_time_us() - time;
 	printf("Duration: %lld\n", duration);
 	sv->duration[7] = duration;
+	float util=0;
+	for(int i=0;i<8;i++)
+	{
+		util += sv->duration[i]/workloadDeadlines[i]
+		if(util>1)
+		printf("Its beyond 100%\n")
+	}
 	// Thread functions for workloads:
 	// thread_button, thread_threecolor, thread_big, thread_small,
 	// thread_touch, thread_rgbcolor, thread_aled, thread_buzzer

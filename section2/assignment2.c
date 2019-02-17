@@ -85,8 +85,6 @@ void learn_workloads(SharedVariable* sv) {
 		if(util>1)
 		printf("Its beyond 100%\n");
 	}
-	int i = prev_selection + 1;
-  int tasks[8] = {0,1,2,3,4,5,6,7};
 	for(int j = 0; j < 8; j++){
 		for(int p = j; p < 8; p++)
 		{
@@ -134,7 +132,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	// Sample scheduler: Round robin
 	// It selects a next thread using aliveTasks.
 	static int prev_selection = -1;
-	i = prev_selection + 1;
+	int i = prev_selection + 1;
 	while(1) {
 		if (i == NUM_TASKS)
 			i = 0;

@@ -134,7 +134,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	// Sample scheduler: Round robin
 	// It selects a next thread using aliveTasks.
 	static int prev_selection = -1;
-
+	i = prev_selection + 1;
 	while(1) {
 		if (i == NUM_TASKS)
 			i = 0;

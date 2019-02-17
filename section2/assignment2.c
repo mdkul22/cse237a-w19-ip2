@@ -111,6 +111,7 @@ void learn_workloads(SharedVariable* sv) {
  }
  sv->hyperperiod = res;
  printf("hyperperiod: %lld\n", sv->hyperperiod);
+ sv->cycle = 1;
 }
 
 	// Thread functions for workloads:

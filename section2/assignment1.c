@@ -33,7 +33,7 @@ void body_button(SharedVariable* sv) {
 	int value = digitalRead(PIN_BUTTON);
 	if(value==LOW){
 	sv->pause = (sv->pause+1)%2;
-	delay(1000);
+	//delay(1000);
 	}
 }
 

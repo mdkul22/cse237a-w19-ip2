@@ -122,10 +122,9 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 		sv->time = get_current_time_us();
 		int ifAlive = 0;
 		for(int j=0; j<8;j++){
-			if(aliveTasks[j]==1){
 			sv->deadlines[j]=workloadDeadlines[j]*(get_scheduler_elapsed_time_us()%workloadDeadlines[j]);
+			if(aliveTasks[i]==1)
 			ifAlive = 1;
-			}
 		}
 		for(int j=1; j<8;j++){
 			if((sv->deadlines[prev_selection]>sv->deadlines[j])&&aliveTasks[j]==1)
@@ -140,7 +139,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 		++i;
 	}
 	// The retun value can be specified like this:
-	printfDBG("%d : prev_selection", prev_selection);
+	printDBG("%d : prev_selection", prev_selection);
 	TaskSelection sel;
 	sel.task = prev_selection; // The thread ID which will be scheduled. i.e., 0(BUTTON) ~ 7(BUZZER)
 	sel.freq = 1; // Request the maximum frequency (if you want the minimum frequency, use 0 instead.)

@@ -33,7 +33,6 @@ void body_button(SharedVariable* sv) {
 	int value = digitalRead(PIN_BUTTON);
 	if(value==LOW){
 	sv->pause = (sv->pause+1)%2;
-	printf("body button toggled\n");
 	delay(1000);
 	}
 }
@@ -72,7 +71,6 @@ void body_small(SharedVariable* sv) {
 	int val = digitalRead(PIN_SMALL);
 	if(val){
 		sv->small_mic = 1;
-		printf("Small mic active\n");
 	}
 	else{
 		sv->small_mic = 0;
@@ -121,8 +119,7 @@ void body_rgbcolor(SharedVariable* sv) {
 
 void body_aled(SharedVariable* sv) {
 	if(sv->pause)
-	{	
-		printf("LED OFF\n");
+	{
 		digitalWrite(PIN_ALED, LOW);
 	}
 	else{

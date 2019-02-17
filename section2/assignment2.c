@@ -136,14 +136,15 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	while(1) {
 		if (i == NUM_TASKS)
 			i = 0;
-		if(aliveTasks[sv->tasks[i]==1)
+		if(aliveTasks[sv->tasks[i]]==1)
 		{
 			prev_selection = sv->tasks[i];
 			for(int j=0; j<i;j++)
 			{
-				if(aliveTasks[j]==1 && j<i)
+				if(aliveTasks[sv->tasks[j]]==1){
 				prev_selection = sv->tasks[j];
 				break;
+				}
 			}
 			break;
 		}
@@ -152,6 +153,6 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	// The retun value can be specified like this:
 	TaskSelection sel;
 	sel.task = prev_selection; // The thread ID which will be scheduled. i.e., 0(BUTTON) ~ 7(BUZZER)
-	sel.freq = 1; // Request the maximum frequency (if you want the minimum frequency, use 0 instead.)
+	sel.freq = 0; // Request the maximum frequency (if you want the minimum frequency, use 0 instead.)
   return sel;
 }

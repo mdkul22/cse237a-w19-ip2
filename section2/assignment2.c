@@ -15,13 +15,6 @@
 // This function is called at the start part of the program before actual scheduling
 // - Parameters
 // sv: The variable which is shared for every function over all threads
-long long gcd(long long a, long long b)
-	{
-	  if (b == 0)
-		  return a;
-	  else
-	  return gcd(b, a%b);
-	}
 void learn_workloads(SharedVariable* sv) {
 	// TODO: Fill the body
 	// This function is executed before the scheduling simulation.
@@ -101,17 +94,9 @@ void learn_workloads(SharedVariable* sv) {
 				sv->tasks[p] = temp;
 			}
 		}
-		printf("%d\t", tasks[j]);
+		printf("%d\t", sv->tasks[j]);
 	}
 	printf("\n");
-	long long res = 1;
- for (int i = 0; i < 8; i++)
- {
-	 res = res*workloadDeadlines[i]/gcd(res, workloadDeadlines[i]);
- }
- sv->hyperperiod = res;
- printf("hyperperiod: %lld\n", sv->hyperperiod);
- sv->cycle = 1;
 }
 
 	// Thread functions for workloads:
@@ -150,41 +135,26 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	static int prev_selection = -1;
 	int i = prev_selection + 1;
 	int cycle = curTime%sv->hyperperiod;
+	printDBG("%d : cycle", cycle);
 	while(1) {
 		if (i == NUM_TASKS)
 			i = 0;
-		if(sv->cycle == cycle)
+		if(aliveTasks[i]==1)
 		{
-			int breaker = 0;
-			for(int j=1;j<8;j++)
+			prev_selection = i;
+			for(int j=0; j<8;j++)
 			{
-				if(sv->pending[sv->tasks[j]]==1 && aliveTasks[sv->tasks[j]]==1)
-				{
-					prev_selection = sv->tasks[j];
-					sv->pending[sv->tasks[j]] = 0;
-					breaker = 1;
-					break;
-				}
-				if(breaker)
+				if(aliveTasks[j]==1 && j<i)
+				prev_selection = tasks[j];
 				break;
 			}
-		}
-		else{
-			sv->cycle = cycle;
-			for(int j = 0; j < 8;j++)
-			{
-				sv->pending[j] = 1;
-			}
-			prev_selection = sv->tasks[0];
-			sv->pending[sv->tasks[0]] = 0;
 			break;
 		}
 		++i;
 	}
 	// The retun value can be specified like this:
-	printDBG("%d : prev_selection", prev_selection);
 	TaskSelection sel;
 	sel.task = prev_selection; // The thread ID which will be scheduled. i.e., 0(BUTTON) ~ 7(BUZZER)
-	sel.freq = 1; // Request the maximum frequency (if you want the minimum frequency, use 0 instead.)
+	sel.freq = 0; // Request the maximum frequency (if you want the minimum frequency, use 0 instead.)
   return sel;
 }

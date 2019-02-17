@@ -78,7 +78,11 @@ void learn_workloads(SharedVariable* sv) {
 	duration = get_current_time_us() - time;
 	printf("Duration: %lld\n", duration);
 	sv->duration[7] = duration;
-
+	for(int j=0; j<8; j++)
+	{
+	sv->tasks[j] = j;
+	sv->pending[j] = 1;
+	}
 	for(int j = 0; j < 8; j++){
 		for(int p = j; p < 8; p++)
 		{

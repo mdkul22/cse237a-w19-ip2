@@ -36,8 +36,8 @@ typedef struct shared_variable {
 	int touch; // once set to 1, metal touch sensed touch
 	int pause;
 	long long duration[8];
-	int tasks[8] = {0, 1, 2, 3 ,4 ,5 ,6 ,7};
-	int pending[8] = {1, 1, 1, 1, 1, 1, 1, 1};
+	int tasks[8];
+	int pending[8];
 	int cycle;
 	long long hyperperiod;
 } SharedVariable;

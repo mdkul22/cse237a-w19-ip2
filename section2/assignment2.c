@@ -91,7 +91,7 @@ void learn_workloads(SharedVariable* sv) {
 	sv->pending[j] = 1;
 	}
 	for(int j = 0; j < 8; j++){
-		for(int p = j; p < 8; p++)
+		for(int p = j+1; p < 8; p++)
 		{
 			int temp;
 			if(workloadDeadlines[j]>workloadDeadlines[p])
@@ -101,7 +101,9 @@ void learn_workloads(SharedVariable* sv) {
 				sv->tasks[p] = temp;
 			}
 		}
+		printf("%d\t", tasks[j]);
 	}
+	printf("\n");
 	long long res = 1;
  for (int i = 0; i < 8; i++)
  {

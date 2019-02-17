@@ -86,7 +86,7 @@ void learn_workloads(SharedVariable* sv) {
 		for(int p = j+1; p < 8; p++)
 		{
 			int temp;
-			if(workloadDeadlines[j]>workloadDeadlines[p])
+			if(workloadDeadlines[j]-duration[i]>workloadDeadlines[p]-duration[p])
 			{
 				temp = sv->tasks[j];
 				sv->tasks[j] = sv->tasks[p];

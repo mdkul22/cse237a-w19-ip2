@@ -85,6 +85,20 @@ void learn_workloads(SharedVariable* sv) {
 		if(util>1)
 		printf("Its beyond 100%\n");
 	}
+	int i = prev_selection + 1;
+  int tasks[8] = {0,1,2,3,4,5,6,7};
+	for(int j = 0; j < 8; j++){
+		for(int p = j; p < 8; p++)
+		{
+			int temp;
+			if(workloadDeadlines[j]>workloadDeadlines[p])
+			{
+				temp = sv->tasks[j];
+				sv->tasks[j] = p;
+				sv->tasks[p] = temp;
+			}
+		}
+	}
 	// Thread functions for workloads:
 	// thread_button, thread_threecolor, thread_big, thread_small,
 	// thread_touch, thread_rgbcolor, thread_aled, thread_buzzer
@@ -121,34 +135,16 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	// It selects a next thread using aliveTasks.
 	static int prev_selection = -1;
 
-	int i = prev_selection + 1;
 	while(1) {
 		if (i == NUM_TASKS)
 			i = 0;
-
-		if (aliveTasks[i] == 1) {
+		if (aliveTasks[sv->tasks[i]] == 1)
 			prev_selection = i;
-			for(int j=i+1;j<8;j++)
-			{
-			if(aliveTasks[j] == 1)
-				{
-					if(workloadDeadlines[j]-sv->duration[j] < workloadDeadlines[i]-sv->duration[i])
-					{
-						prev_selection = j;
-						i = j;
-					}
-				}
-			}
-			break;
-		}
-
 		++i;
 	}
-
 	// The retun value can be specified like this:
 	TaskSelection sel;
 	sel.task = prev_selection; // The thread ID which will be scheduled. i.e., 0(BUTTON) ~ 7(BUZZER)
 	sel.freq = 1; // Request the maximum frequency (if you want the minimum frequency, use 0 instead.)
-
-    return sel;
+  return sel;
 }

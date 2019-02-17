@@ -86,10 +86,10 @@ void learn_workloads(SharedVariable* sv) {
 		printf("Its beyond 100%\n");
 	}
 	for(int j = 0; j < 8; j++){
-		for(int p = j; p < 8; p++)
+		for(int p = j+1; p < 8; p++)
 		{
 			int temp;
-			if(workloadDeadlines[p]<workloadDeadlines[j])
+			if(workloadDeadlines[p] < workloadDeadlines[j])
 			{
 				temp = sv->tasks[j];
 				sv->tasks[j] = p;
@@ -98,6 +98,7 @@ void learn_workloads(SharedVariable* sv) {
 		}
 		printf("%d\t", sv->tasks[j]);
 	}
+	printf("\n");
 	// Thread functions for workloads:
 	// thread_button, thread_threecolor, thread_big, thread_small,
 	// thread_touch, thread_rgbcolor, thread_aled, thread_buzzer

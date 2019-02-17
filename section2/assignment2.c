@@ -15,6 +15,13 @@
 // This function is called at the start part of the program before actual scheduling
 // - Parameters
 // sv: The variable which is shared for every function over all threads
+long long gcd(long long a, long long b)
+	{
+	  if (b == 0)
+		  return a;
+	  else
+	  return gcd(b, a%b);
+	}
 void learn_workloads(SharedVariable* sv) {
 	// TODO: Fill the body
 	// This function is executed before the scheduling simulation.
@@ -104,13 +111,6 @@ void learn_workloads(SharedVariable* sv) {
  printf("hyperperiod: %lld\n", sv->hyperperiod);
 }
 
-long long gcd(long long a, long long b)
-	{
-	  if (b == 0)
-		  return a;
-	  else
-	  return gcd(b, a%b);
-	}
 	// Thread functions for workloads:
 	// thread_button, thread_threecolor, thread_big, thread_small,
 	// thread_touch, thread_rgbcolor, thread_aled, thread_buzzer
@@ -152,17 +152,17 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 			i = 0;
 		if(sv->cycle == cycle)
 		{
-			int break = 0;
+			int breaker = 0;
 			for(int j=1;j<8;j++)
 			{
 				if(sv->pending[sv->tasks[j]]==1 && aliveTasks[sv->tasks[j]]==1)
 				{
 					prev_selection = sv->tasks[j];
 					sv->pending[sv->tasks[j]] = 0;
-					break = 1;
+					breaker = 1;
 					break;
 				}
-				if(break)
+				if(breaker)
 				break;
 			}
 		}

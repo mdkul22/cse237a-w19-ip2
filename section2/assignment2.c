@@ -121,8 +121,20 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 
 		if (aliveTasks[i] == 1) {
 			prev_selection = i;
+			for(int j=0;j<NUM_TASKS;i++)
+			{
+			if(aliveTasks[j] == 1)
+				{
+					if(workloadDeadlines[j] < workloadDeadlines[i])
+					{
+						prev_selection = j;
+						i = j;
+					}
+				}
+			}
 			break;
 		}
+		
 		++i;
 	}
 

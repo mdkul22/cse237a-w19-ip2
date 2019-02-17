@@ -88,6 +88,7 @@ void learn_workloads(SharedVariable* sv) {
 	}
 	int temp;
 	for(int j = 0; j < 8; j++){
+		printf("%d\t", sv->tasks[j]);
 		for(int p = j+1; p < 8; p++)
 		{
 			if(workloadDeadlines[p] < workloadDeadlines[j])
@@ -97,7 +98,6 @@ void learn_workloads(SharedVariable* sv) {
 				sv->tasks[p] = temp;
 			}
 		}
-		printf("%d\t", sv->tasks[j]);
 	}
 	printf("\n");
 	// Thread functions for workloads:

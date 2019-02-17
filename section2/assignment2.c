@@ -94,7 +94,7 @@ void learn_workloads(SharedVariable* sv) {
 			if(workloadDeadlines[p] < workloadDeadlines[j])
 			{
 				temp = sv->tasks[j];
-				sv->tasks[j] = p;
+				sv->tasks[j] = sv->tasks[p];
 				sv->tasks[p] = temp;
 			}
 		}

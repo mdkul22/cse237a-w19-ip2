@@ -79,7 +79,33 @@ void learn_workloads(SharedVariable* sv) {
 	printf("Duration: %lld\n", duration);
 	sv->duration[7] = duration;
 
-	int temp;
+	for(int j = 0; j < 8; j++){
+		for(int p = j; p < 8; p++)
+		{
+			int temp;
+			if(workloadDeadlines[j]>workloadDeadlines[p])
+			{
+				temp = sv->tasks[j];
+				sv->tasks[j] = sv->tasks[p];
+				sv->tasks[p] = temp;
+			}
+		}
+	}
+	long long res = 1;
+ for (int i = 0; i < 8; i++)
+ {
+	 res = res*workloadDeadlines[i]/gcd(res, workloadDeadlines[i]);
+ }
+ sv->hyperperiod = res;
+ printf("hyperperiod: %lld\n", sv->hyperperiod);
+}
+
+long long gcd(long long a, long long b)
+	{
+	  if (b == 0)
+		  return a;
+	  else
+	  return gcd(b, a%b);
 	}
 	// Thread functions for workloads:
 	// thread_button, thread_threecolor, thread_big, thread_small,
@@ -107,7 +133,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
     // You need to implement an energy-efficient EDF (Earliest Deadline First) scheduler.
 
 	// Tip 1. You may get the current time elapsed in the scheduler here like:
-	// long long curTime = get_scheduler_elapsed_time_us();
+	long long curTime = get_scheduler_elapsed_time_us();
 
 	// Also, do not make any interruptable / IO tasks in this function.
 	// You can use printfDBG instead of printf.
@@ -116,24 +142,34 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	// It selects a next thread using aliveTasks.
 	static int prev_selection = -1;
 	int i = prev_selection + 1;
+	int cycle = curTime%sv->hyperperiod;
 	while(1) {
 		if (i == NUM_TASKS)
 			i = 0;
-		sv->time = get_current_time_us();
-		int ifAlive = 0;
-		for(int j=0; j<8;j++){
-			sv->deadlines[j]=workloadDeadlines[j]*(get_scheduler_elapsed_time_us()%workloadDeadlines[j]);
-			if(aliveTasks[i]==1)
-			ifAlive = 1;
-		}
-		for(int j=1; j<8;j++){
-			if((sv->deadlines[prev_selection]>sv->deadlines[j])&&aliveTasks[j]==1)
+		if(sv->cycle == cycle)
+		{
+			int break = 0;
+			for(int j=1;j<8;j++)
 			{
-				prev_selection = j;
+				if(sv->pending[sv->tasks[j]]==1 && aliveTasks[sv->tasks[j]]==1)
+				{
+					prev_selection = sv->tasks[j];
+					sv->pending[sv->tasks[j]] = 0;
+					break = 1;
+					break;
+				}
+				if(break)
+				break;
 			}
 		}
-		if(ifAlive)
-		{
+		else{
+			sv->cycle = cycle;
+			for(int j = 0; j < 8;j++)
+			{
+				sv->pending[j] = 1;
+			}
+			prev_selection = sv->tasks[0];
+			sv->pending[sv->tasks[0]] = 0;
 			break;
 		}
 		++i;

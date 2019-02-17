@@ -78,27 +78,8 @@ void learn_workloads(SharedVariable* sv) {
 	duration = get_current_time_us() - time;
 	printf("Duration: %lld\n", duration);
 	sv->duration[7] = duration;
-	float util=0;
-	for(int i=0;i<8;i++)
-	{
-		util += sv->duration[i]/workloadDeadlines[i];
-		if(util>1)
-		printf("Its beyond 100%\n");
-		sv->tasks[i] = i;
-		printf("%d\t", sv->tasks[i]);
-	}
+
 	int temp;
-	for(int j = 0; j < 8; j++){
-		for(int p = j+1; p < 8; p++)
-		{
-			if(workloadDeadlines[p]-sv->duration[p] < workloadDeadlines[j]-sv->duration[j])
-			{
-				temp = sv->tasks[j];
-				sv->tasks[j] = sv->tasks[p];
-				sv->tasks[p] = temp;
-			}
-		}
-		printf("%d\t", sv->tasks[j]);
 	}
 	// Thread functions for workloads:
 	// thread_button, thread_threecolor, thread_big, thread_small,
@@ -139,9 +120,22 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	while(1) {
 		if (i == NUM_TASKS)
 			i = 0;
-		if (aliveTasks[sv->tasks[i]] == 1)
+		sv->time = get_current_time_us();
+		for(int j=0; j<8;j++){
+			if(aliveTasks[j]==1)
+			sv->deadlines[j]=workloadDeadlines[j]*(get_scheduler_elapsed_time_us()%workloadDeadlines[j]);
+		}
+		prev_selection = 0;
+		int ifAlive = 0;
+		for(int j=1; j<8;j++){
+			if(sv->deadlines[prev_selection]>sv->deadlines[j]&&aliveTasks[j]==1)
+			{
+				prev_selection = j;
+				ifAlive = 1;
+			}
+		}
+		if(ifAlive)
 		{
-			prev_selection = sv->tasks[i];
 			break;
 		}
 		++i;

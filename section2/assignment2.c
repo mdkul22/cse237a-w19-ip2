@@ -145,7 +145,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 			for(int j=0; j<8;j++)
 			{
 				if(aliveTasks[j]==1 && j<i)
-				prev_selection = tasks[j];
+				prev_selection = sv->tasks[j];
 				break;
 			}
 			break;

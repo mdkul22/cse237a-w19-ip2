@@ -83,7 +83,7 @@ void learn_workloads(SharedVariable* sv) {
 	{
 		util += sv->duration[i]/workloadDeadlines[i];
 		if(util>1)
-		printf("Its beyond 100%\n")
+		printf("Its beyond 100%\n");
 	}
 	// Thread functions for workloads:
 	// thread_button, thread_threecolor, thread_big, thread_small,

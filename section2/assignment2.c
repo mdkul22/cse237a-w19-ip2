@@ -90,7 +90,6 @@ void learn_workloads(SharedVariable* sv) {
 
 	// Tip 2. You can get the current time here like:
 	// long long curTime = get_current_time_us();
-}
 
 
 // select_task(SharedVariable* sv, const int* aliveTasks):
@@ -121,17 +120,17 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 		if (i == NUM_TASKS)
 			i = 0;
 		sv->time = get_current_time_us();
-		for(int j=0; j<8;j++){
-			if(aliveTasks[j]==1)
-			sv->deadlines[j]=workloadDeadlines[j]*(get_scheduler_elapsed_time_us()%workloadDeadlines[j]);
-		}
-		prev_selection = 0;
 		int ifAlive = 0;
+		for(int j=0; j<8;j++){
+			if(aliveTasks[j]==1){
+			sv->deadlines[j]=workloadDeadlines[j]*(get_scheduler_elapsed_time_us()%workloadDeadlines[j]);
+			ifAlive = 1;
+			}
+		}
 		for(int j=1; j<8;j++){
-			if(sv->deadlines[prev_selection]>sv->deadlines[j]&&aliveTasks[j]==1)
+			if((sv->deadlines[prev_selection]>sv->deadlines[j])&&aliveTasks[j]==1)
 			{
 				prev_selection = j;
-				ifAlive = 1;
 			}
 		}
 		if(ifAlive)

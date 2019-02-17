@@ -23,60 +23,60 @@ void learn_workloads(SharedVariable* sv) {
 	long long duration = 0;
 	printf("Performing threads to check performance\n");
 
-	printf("thread_button time in us");
+	printf("thread_button time in us\n");
 	time = get_current_time_us();
 	thread_button(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld", duration);
+	printf("Duration: %lld\n", duration);
 	sv->duration[0] = duration;
 
-	printf("thread_threecolor time in us");
+	printf("thread_threecolor time in us\n");
 	time = get_current_time_us();
 	thread_threecolor(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld", duration);
+	printf("Duration: %lld\n", duration);
 	sv->duration[1] = duration;
 
-	printf("thread_big time in us");
+	printf("thread_big time in us\n");
 	time = get_current_time_us();
 	thread_big(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld", duration);
+	printf("Duration: %lld\n", duration);
 	sv->duration[2] = duration;
 
-	printf("thread_small time in us");
+	printf("thread_small time in us\n");
 	time = get_current_time_us();
 	thread_small(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld", duration);
+	printf("Duration: %lld\n", duration);
 	sv->duration[3] = duration;
 
-	printf("thread_touch time in us");
+	printf("thread_touch time in us\n");
 	time = get_current_time_us();
 	thread_touch(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld", duration);
+	printf("Duration: %lld\n", duration);
 	sv->duration[4] = duration;
 
-	printf("thread_rgbcolor time in us");
+	printf("thread_rgbcolor time in us\n");
 	time = get_current_time_us();
 	thread_rgbcolor(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld", duration);
+	printf("Duration: %lld\n", duration);
 	sv->duration[5] = duration;
 
-	printf("thread_aled time in us");
+	printf("thread_aled time in us\n");
 	time = get_current_time_us();
 	thread_aled(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld", duration);
+	printf("Duration: %lld\n", duration);
 	sv->duration[6] = duration;
 
-	printf("thread_buzzer time in us");
+	printf("thread_buzzer time in us\n");
 	time = get_current_time_us();
 	thread_buzzer(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld", duration);
+	printf("Duration: %lld\n", duration);
 	sv->duration[7] = duration;
 	// Thread functions for workloads:
 	// thread_button, thread_threecolor, thread_big, thread_small,

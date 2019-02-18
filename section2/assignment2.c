@@ -19,7 +19,7 @@ void learn_workloads(SharedVariable* sv) {
 	// You need to calculate the execution time of each thread here.
 	long long time = 0;
 	long long duration = 0;
-	
+
 	time = get_current_time_us();
 	thread_button(sv);
 	duration = get_current_time_us() - time;
@@ -89,7 +89,7 @@ void learn_workloads(SharedVariable* sv) {
 // - Return value
 // TaskSelection structure which indicates the scheduled task and the CPU frequency
 TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long idleTime) {
-	
+
 	// TODO: Fill the body
 	// This function is executed inside of the scheduling simulation.
     // You need to implement an energy-efficient EDF (Earliest Deadline First) scheduler.
@@ -125,22 +125,20 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 		int i = (temp%10)-1;
 		temp = temp / 10;
 		while(1)
-		{					
-			if(sv->realDeadline[i-1] > sv->realDeadline[(temp%10)-1])
+		{
+			if(sv->realDeadline[i] > sv->realDeadline[(temp%10)-1])
 			{
 				i = (temp%10)-1;
-				prev_selection = i - 1;
+				prev_selection = i;
 			}
 			temp = temp / 10;
 			if(temp == 0)
 			{
-			printDBG("Breaks inner while\n");
 			break;
 			}
 		}
 		if(prev_selection != -1)
 		{
-			printDBG("breaking");
 			break;
 		}
 	}

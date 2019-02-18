@@ -113,7 +113,12 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	while(1){
 	for(int j=0; j < NUM_TASKS; j++)
 		{
-			if((aliveTasks[j]+sv->prev_Alive[j] == 1) && (sv->prev_Alive[j]==0))
+			if((aliveTasks[j]+sv->prev_Alive[j] == 1) && (sv->prev_Alive[j]==1))
+			{
+				sv->realDeadline[j] = 0;
+				sv->prevTime[j] = 0;
+			}
+			else if((aliveTasks[j]+sv->prev_Alive[j] == 1) && (sv->prev_Alive[j]==0))
 			{
 				sv->realDeadline[j] = workloadDeadlines[j];
 				sv->prevTime[j] = get_current_time_us();
@@ -122,7 +127,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 					prev_selection = j;
 				}
 			}
-			if(aliveTasks[j]+sv->prev_Alive[j] == 2)
+			else if(aliveTasks[j]+sv->prev_Alive[j] == 2)
 			{
 				sv->realDeadline[j] = sv->realDeadline[j] - (get_current_time_us() - sv->prevTime[j]);
 				if(sv->realDeadline[j]<deadline){
@@ -137,7 +142,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 			break;
 		}
 	}
-	printDBG("T%d's Deadline: %lld and idle time: %lld\n", j, sv->realDeadline[prev_selection], idleTime);
+	printDBG("T%d's Deadline: %lld and idle time: %lld\n", prev_selection, sv->realDeadline[prev_selection], idleTime);
 	// The retun value can be specified like this:
 	TaskSelection sel;
 	sel.task = prev_selection; // The thread ID which will be scheduled. i.e., 0(BUTTON) ~ 7(BUZZER)

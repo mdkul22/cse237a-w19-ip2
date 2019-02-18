@@ -5,10 +5,6 @@
 #include "governor.h"
 #include <stdio.h>
 
-#define OLD 1
-#define NEW 0
-#define NUL -1
-#define DONE 2
 // Note: Deadline of each workload is defined in the "workloadDeadlines" variable.
 // i.e., You can access the dealine of the BUTTON thread using workloadDeadlines[BUTTON]
 // See also deadlines.c and workload.h
@@ -86,7 +82,6 @@ void learn_workloads(SharedVariable* sv) {
 	for(int j=0; j<8; j++)
 	{
 	sv->tasks[j] = j;
-	sv->TaskAge[j] = NUL;
 	sv->prev_Alive[j] = 0;
 	sv->prevTime[j] = 0;
 	}
@@ -141,31 +136,34 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	// Sample scheduler: Round robin
 	// It selects a next thread using aliveTasks.
 	static int prev_selection = -1;
-	int temp;
+	int temp = 0;
 	while(1){
 		for(int j=0; j < NUM_TASKS; j++)
 		{
 			if((aliveTasks[j]+sv->prev_Alive[j] == 1) && (sv->prev_Alive[j]==0))
 			{
-				sv->TaskAge[j] = NEW;
 				sv->realDeadline[j] = workloadDeadlines[j];
 				sv->prevTime[j] = get_scheduler_elapsed_time_us();
 			}
 			if(aliveTasks[j]+sv->prev_Alive[j] == 2)
 			{
-				sv->TaskAge[j] = OLD;
 				sv->realDeadline[j] -= get_scheduler_elapsed_time_us()-sv->prevTime[j];
 			}
 			sv->prev_Alive[j] = aliveTasks[j];
-		}
-
-		int i = prev_selection + 1;
-		for(int j=1; j<8; j++)
-		{
-			if((sv->realDeadline[i] > sv->realDeadline[j]) && sv->TaskAge){
-			i = j;
-			prev_selection=i;
+			if(aliveTasks[j]==1){
+				temp += 10*(j+1);
 			}
+		}
+		int i = sv->realDeadline[temp%10];
+		temp = temp / 10;
+		while(temp!=0)
+		{
+			if(i > sv->realDeadline[temp%10])
+			{
+				i = sv->realDeadline[temp%10];
+				prev_selection = i;
+			}
+			temp = temp / 10;
 		}
 		if(prev_selection != -1)
 		{

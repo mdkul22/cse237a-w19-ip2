@@ -59,12 +59,17 @@ void learn_workloads(SharedVariable* sv) {
 	thread_buzzer(sv);
 	duration = get_current_time_us() - time;
 	sv->duration[7] = duration;
-
+	float util = 0;
 	for(int j=0; j<8; j++)
 	{
 	sv->tasks[j] = j;
 	sv->prev_Alive[j] = 0;
 	sv->prevTime[j] = 0;
+	util += sv->duration[j]/workloadDeadlines[j];
+	if(util > 1)
+	{
+	printDBG("Util beyond 100%");
+	} 
 	}
 }
 
@@ -105,8 +110,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	static int prev_selection = -1;
 	int temp = 0;
 	while(1){
-		printDBG("Entering first while\n");
-		for(int j=0; j < NUM_TASKS; j++)
+	for(int j=0; j < NUM_TASKS; j++)
 		{
 			if((aliveTasks[j]+sv->prev_Alive[j] == 1) && (sv->prev_Alive[j]==0))
 			{
@@ -124,18 +128,17 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 		}
 		int i = (temp%10)-1;
 		temp = temp / 10;
-		while(1)
-		{
+		while(temp!=0)
+		{	
 			if(sv->realDeadline[i] > sv->realDeadline[(temp%10)-1])
 			{
 				i = (temp%10)-1;
 				prev_selection = i;
 			}
-			temp = temp / 10;
-			if(temp == 0)
-			{
-			break;
+			else{
+				prev_selection = i;
 			}
+			temp = temp / 10;
 		}
 		if(prev_selection != -1)
 		{
@@ -147,5 +150,5 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	TaskSelection sel;
 	sel.task = prev_selection; // The thread ID which will be scheduled. i.e., 0(BUTTON) ~ 7(BUZZER)
 	sel.freq = 1; // Request the maximum frequency (if you want the minimum frequency, use 0 instead.)
-  return sel;
+  	return sel;
 }

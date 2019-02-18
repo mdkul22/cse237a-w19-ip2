@@ -5,6 +5,10 @@
 #include "governor.h"
 #include <stdio.h>
 
+#define OLD 1
+#define NEW 0
+#define NUL -1
+#define DONE 2
 // Note: Deadline of each workload is defined in the "workloadDeadlines" variable.
 // i.e., You can access the dealine of the BUTTON thread using workloadDeadlines[BUTTON]
 // See also deadlines.c and workload.h
@@ -78,15 +82,20 @@ void learn_workloads(SharedVariable* sv) {
 	duration = get_current_time_us() - time;
 	printf("Duration: %lld\n", duration);
 	sv->duration[7] = duration;
+
 	for(int j=0; j<8; j++)
 	{
 	sv->tasks[j] = j;
+	sv->TaskAge[j] = NUL;
+	sv->prev_Alive[j] = 0;
+	sv->prevTime[j] = 0;
 	}
+
 	for(int j = 0; j < 8; j++){
 		for(int p = j+1; p < 8; p++)
 		{
 			int temp;
-			if(workloadDeadlines[j]-duration[i]>workloadDeadlines[p]-duration[p])
+			if(workloadDeadlines[j]>workloadDeadlines[p])
 			{
 				temp = sv->tasks[j];
 				sv->tasks[j] = sv->tasks[p];
@@ -132,24 +141,38 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	// Sample scheduler: Round robin
 	// It selects a next thread using aliveTasks.
 	static int prev_selection = -1;
-	int i = prev_selection + 1;
-	while(1) {
-		if (i == NUM_TASKS)
-			i = 0;
-		if(aliveTasks[sv->tasks[i]]==1)
+	int temp;
+	while(1){
+		for(int j=0; j < NUM_TASKS; j++)
 		{
-			prev_selection = sv->tasks[i];
-			for(int j=0; j<i;j++)
+			if((aliveTasks[sv->tasks[j]]+sv->prev_Alive[sv->tasks[j]] == 1) && (sv->prev_Alive[j]==0))
 			{
-				if(aliveTasks[sv->tasks[j]]==1){
-				prev_selection = sv->tasks[j];
-				break;
-				}
+				sv->TaskAge[sv->tasks[j]] = NEW;
+				sv->realDeadline[sv->tasks[j]] = workloadDeadlines[sv->tasks[j]];
+				sv->prevTime[j] = get_scheduler_elapsed_time_us();
 			}
+			if(aliveTasks[sv->tasks[j]]+sv->prev_Alive[sv->tasks[j]] == 2)
+			{
+				sv->TaskAge[sv->tasks[j]] = OLD;
+				sv->realDeadline[sv->tasks[j]] -= get_scheduler_elapsed_time_us()-sv->prevTime[j];
+			}
+			sv->prev_Alive[tasks[j]] = aliveTasks[tasks[j]];
+		}
+
+		int i = prev_selection + 1;
+		for(int j=1; j<8; j++)
+		{
+			if((sv->realDeadline[i] > sv->realDeadline[j]) && sv->TaskAge){
+			i = j;
+			prev_selection=i;
+			}
+		}
+		if(prev_selection != -1)
+		{
 			break;
 		}
-		++i;
 	}
+
 	// The retun value can be specified like this:
 	TaskSelection sel;
 	sel.task = prev_selection; // The thread ID which will be scheduled. i.e., 0(BUTTON) ~ 7(BUZZER)

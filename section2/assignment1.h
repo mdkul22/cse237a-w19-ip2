@@ -37,6 +37,9 @@ typedef struct shared_variable {
 	int pause;
 	long long duration[8];
 	int tasks[8];
+	int TaskAge[8];
+	long long realDeadline[8];
+	prev_Alive[8];
 } SharedVariable;
 
 

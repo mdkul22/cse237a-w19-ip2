@@ -71,6 +71,8 @@ void learn_workloads(SharedVariable* sv) {
 	printDBG("Util beyond 100%");
 	}
 	}
+	sv->oldUtil = util;
+	sv->newUtil = 0;
 }
 
 	// Thread functions for workloads:
@@ -124,6 +126,8 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 			{
 				sv->realDeadline[j] = workloadDeadlines[j];
 				sv->prevTime[j] = get_scheduler_elapsed_time_us();
+				sv->currExec[j] = sv->duration[j];
+				sv->newUtil += sv->currExec[j]/sv->realDeadline[j];
 				if(sv->realDeadline[j]<deadline){
 					deadline = sv->realDeadline[j];
 					prev_selection = j;
@@ -133,6 +137,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 			else if((aliveTasks[j]== 1) && (sv->prev_Alive[j]==1))
 			{
 				sv->realDeadline[j] = sv->realDeadline[j] - (get_scheduler_elapsed_time_us() - sv->prevTime[j]);
+				sv->newUtil += sv->currExec[j]/sv->realDeadline[j];
 				if(sv->realDeadline[j]<deadline){
 					deadline = sv->realDeadline[j];
 					prev_selection = j;
@@ -147,19 +152,23 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	}
 	printDBG("T%d's Deadline: %lld and idle time: %lld\n", prev_selection, (sv->realDeadline[prev_selection]+get_scheduler_elapsed_time_us())/1000, idleTime);
 	// The retun value can be specified like this:
+	sv->currExec[prev_selection] -= 10000;
 	if(sv->realDeadline[prev_selection]<10000)
 	{
 		sv->prev_Alive[prev_selection] = 0;
+		sv->currExec[prev_selection] = 0;
 	}
 	TaskSelection sel;
 	sel.task = prev_selection; // The thread ID which will be scheduled. i.e., 0(BUTTON) ~ 7(BUZZER)
-	if(idleTime>0)
-	{
-	sel.freq = 0; // Request the maximum frequency (if you want the minimum frequency, use 0 instead.)
-	}
-	else
+	if(sv->newUtil>sv->oldUtil)
 	{
 		sel.freq = 1;
 	}
+	else
+	{
+		sel.freq = 0;
+	}
+	sv->oldUtil=sv->newUtil;
+	sv->newUtil=0;
   return sel;
 }

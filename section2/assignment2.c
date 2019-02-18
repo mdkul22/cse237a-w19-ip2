@@ -145,7 +145,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 			break;
 		}
 	}
-	printDBG("T%d's Deadline: %lld and idle time: %lld\n", prev_selection, sv->realDeadline[prev_selection], idleTime);
+	printDBG("T%d's Deadline: %lld and idle time: %lld\n", prev_selection, (sv->realDeadline[prev_selection]+get_scheduler_elapsed_time_us())/1000, idleTime);
 	// The retun value can be specified like this:
 	if(sv->realDeadline[prev_selection]<10000)
 	{

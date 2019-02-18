@@ -145,18 +145,18 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	while(1){
 		for(int j=0; j < NUM_TASKS; j++)
 		{
-			if((aliveTasks[sv->tasks[j]]+sv->prev_Alive[sv->tasks[j]] == 1) && (sv->prev_Alive[j]==0))
+			if((aliveTasks[j]+sv->prev_Alive[j] == 1) && (sv->prev_Alive[j]==0))
 			{
-				sv->TaskAge[sv->tasks[j]] = NEW;
-				sv->realDeadline[sv->tasks[j]] = workloadDeadlines[sv->tasks[j]];
+				sv->TaskAge[j] = NEW;
+				sv->realDeadline[j] = workloadDeadlines[j];
 				sv->prevTime[j] = get_scheduler_elapsed_time_us();
 			}
-			if(aliveTasks[sv->tasks[j]]+sv->prev_Alive[sv->tasks[j]] == 2)
+			if(aliveTasks[j]+sv->prev_Alive[j] == 2)
 			{
-				sv->TaskAge[sv->tasks[j]] = OLD;
-				sv->realDeadline[sv->tasks[j]] -= get_scheduler_elapsed_time_us()-sv->prevTime[j];
+				sv->TaskAge[j] = OLD;
+				sv->realDeadline[j] -= get_scheduler_elapsed_time_us()-sv->prevTime[j];
 			}
-			sv->prev_Alive[tasks[j]] = aliveTasks[tasks[j]];
+			sv->prev_Alive[j] = aliveTasks[j];
 		}
 
 		int i = prev_selection + 1;

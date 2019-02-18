@@ -64,6 +64,7 @@ void learn_workloads(SharedVariable* sv) {
 	{
 	sv->tasks[j] = j;
 	sv->prev_Alive[j] = 0;
+	sv->prevTime[j] = 0;
 	util += sv->duration[j]/workloadDeadlines[j];
 	if(util > 1)
 	{
@@ -116,20 +117,24 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 			if((aliveTasks[j] == 0) && (sv->prev_Alive[j]==1))
 			{
 				sv->realDeadline[j] = 0;
+				sv->prevTime[j] = 0;
 			}
 			// task newly created
 			else if((aliveTasks[j]== 1) && (sv->prev_Alive[j]==0))
 			{
-				sv->realDeadline[j] = workloadDeadlines[j] + get_scheduler_elapsed_time_us();
+				sv->realDeadline[j] = workloadDeadlines[j];
+				sv->prevTime[j] = get_scheduler_elapsed_time_us();
 				if(sv->realDeadline[j]<deadline){
 					deadline = sv->realDeadline[j];
 					prev_selection = j;
 				}
 			}
-			// task is old
+			// task is old and
 			else if((aliveTasks[j]== 1) && (sv->prev_Alive[j]==1))
 			{
-				sv->realDeadline[j] = sv->realDeadline[j] - get_scheduler_elapsed_time_us();
+				if(realDeadline[j]==0)
+				printf("THIS IS WRONG");
+				sv->realDeadline[j] = sv->realDeadline[j] - (get_scheduler_elapsed_time_us() - sv->prevTime[j]);
 				if(sv->realDeadline[j]<deadline){
 					deadline = sv->realDeadline[j];
 					prev_selection = j;
@@ -137,6 +142,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 			}
 			else{
 				sv->realDeadline[j] = 0;
+				sv->prevTime[j] = 0;
 			}
 			sv->prev_Alive[j] = aliveTasks[j];
 		}

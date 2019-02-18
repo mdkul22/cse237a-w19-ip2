@@ -3,7 +3,6 @@
 #include "workload.h"
 #include "scheduler.h"
 #include "governor.h"
-
 // Note: Deadline of each workload is defined in the "workloadDeadlines" variable.
 // i.e., You can access the dealine of the BUTTON thread using workloadDeadlines[BUTTON]
 // See also deadlines.c and workload.h
@@ -106,6 +105,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	static int prev_selection = -1;
 	int temp = 0;
 	while(1){
+		printDBG("Entering first while\n");
 		for(int j=0; j < NUM_TASKS; j++)
 		{
 			if((aliveTasks[j]+sv->prev_Alive[j] == 1) && (sv->prev_Alive[j]==0))
@@ -122,13 +122,13 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 				temp = 10*temp + (j+1);
 			}
 		}
-		int i = sv->realDeadline[(temp%10)-1];
+		int i = (temp%10)-1;
 		temp = temp / 10;
 		while(1)
-		{
+		{					
 			if(sv->realDeadline[i-1] > sv->realDeadline[(temp%10)-1])
 			{
-				i = sv->realDeadline[(temp%10)-1];
+				i = (temp%10)-1;
 				prev_selection = i - 1;
 			}
 			temp = temp / 10;

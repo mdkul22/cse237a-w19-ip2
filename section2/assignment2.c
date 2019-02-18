@@ -132,8 +132,6 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 			// task is old
 			else if((aliveTasks[j]== 1) && (sv->prev_Alive[j]==1))
 			{
-				if(realDeadline[j]==0)
-				printf("THIS IS WRONG");
 				sv->realDeadline[j] = sv->realDeadline[j] - (get_scheduler_elapsed_time_us() - sv->prevTime[j]);
 				if(sv->realDeadline[j]<deadline){
 					deadline = sv->realDeadline[j];
@@ -151,10 +149,17 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	// The retun value can be specified like this:
 	if(sv->realDeadline[prev_selection]<10000)
 	{
-		sv->prev_Alive[j] = 0;
+		sv->prev_Alive[prev_selection] = 0;
 	}
 	TaskSelection sel;
 	sel.task = prev_selection; // The thread ID which will be scheduled. i.e., 0(BUTTON) ~ 7(BUZZER)
-	sel.freq = 1; // Request the maximum frequency (if you want the minimum frequency, use 0 instead.)
+	if(idleTime>0)
+	{
+	sel.freq = 0; // Request the maximum frequency (if you want the minimum frequency, use 0 instead.)
+	}
+	else
+	{
+		sel.freq = 1;
+	}
   return sel;
 }

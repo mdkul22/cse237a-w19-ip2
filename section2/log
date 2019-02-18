@@ -1,0 +1,20 @@
+MIN frequency change test: 600000 == 600000
+MAX frequency change test: 600000 == 1200000
+Performing threads to check performance
+thread_button time in us
+Duration: 11913
+thread_threecolor time in us
+Duration: 35809
+thread_big time in us
+Duration: 19676
+thread_small time in us
+Duration: 48469
+thread_touch time in us
+Duration: 33968
+thread_rgbcolor time in us
+Duration: 16846
+thread_aled time in us
+Duration: 51996
+thread_buzzer time in us
+Duration: 22529
+7	0	6	1	2	5	3	4	

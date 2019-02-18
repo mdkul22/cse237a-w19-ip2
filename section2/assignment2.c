@@ -3,7 +3,6 @@
 #include "workload.h"
 #include "scheduler.h"
 #include "governor.h"
-#include <stdio.h>
 
 // Note: Deadline of each workload is defined in the "workloadDeadlines" variable.
 // i.e., You can access the dealine of the BUTTON thread using workloadDeadlines[BUTTON]
@@ -21,62 +20,45 @@ void learn_workloads(SharedVariable* sv) {
 	// You need to calculate the execution time of each thread here.
 	long long time = 0;
 	long long duration = 0;
-	printf("Performing threads to check performance\n");
-
-	printf("thread_button time in us\n");
+	
 	time = get_current_time_us();
 	thread_button(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld\n", duration);
 	sv->duration[0] = duration;
 
-	printf("thread_threecolor time in us\n");
 	time = get_current_time_us();
 	thread_threecolor(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld\n", duration);
 	sv->duration[1] = duration;
 
-	printf("thread_big time in us\n");
 	time = get_current_time_us();
 	thread_big(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld\n", duration);
 	sv->duration[2] = duration;
 
-	printf("thread_small time in us\n");
 	time = get_current_time_us();
 	thread_small(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld\n", duration);
 	sv->duration[3] = duration;
 
-	printf("thread_touch time in us\n");
 	time = get_current_time_us();
 	thread_touch(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld\n", duration);
 	sv->duration[4] = duration;
 
-	printf("thread_rgbcolor time in us\n");
 	time = get_current_time_us();
 	thread_rgbcolor(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld\n", duration);
 	sv->duration[5] = duration;
 
-	printf("thread_aled time in us\n");
 	time = get_current_time_us();
 	thread_aled(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld\n", duration);
 	sv->duration[6] = duration;
 
-	printf("thread_buzzer time in us\n");
 	time = get_current_time_us();
 	thread_buzzer(sv);
 	duration = get_current_time_us() - time;
-	printf("Duration: %lld\n", duration);
 	sv->duration[7] = duration;
 
 	for(int j=0; j<8; j++)
@@ -85,21 +67,6 @@ void learn_workloads(SharedVariable* sv) {
 	sv->prev_Alive[j] = 0;
 	sv->prevTime[j] = 0;
 	}
-
-	for(int j = 0; j < 8; j++){
-		for(int p = j+1; p < 8; p++)
-		{
-			int temp;
-			if(workloadDeadlines[j]>workloadDeadlines[p])
-			{
-				temp = sv->tasks[j];
-				sv->tasks[j] = sv->tasks[p];
-				sv->tasks[p] = temp;
-			}
-		}
-		printf("%d\t", sv->tasks[j]);
-	}
-	printf("\n");
 }
 
 	// Thread functions for workloads:
@@ -123,6 +90,7 @@ void learn_workloads(SharedVariable* sv) {
 // - Return value
 // TaskSelection structure which indicates the scheduled task and the CPU frequency
 TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long idleTime) {
+	
 	// TODO: Fill the body
 	// This function is executed inside of the scheduling simulation.
     // You need to implement an energy-efficient EDF (Earliest Deadline First) scheduler.
@@ -136,20 +104,18 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	// Sample scheduler: Round robin
 	// It selects a next thread using aliveTasks.
 	static int prev_selection = -1;
-	int temp;
+	int temp = 0;
 	while(1){
 		for(int j=0; j < NUM_TASKS; j++)
 		{
 			if((aliveTasks[j]+sv->prev_Alive[j] == 1) && (sv->prev_Alive[j]==0))
 			{
-				printDBG("realDeadline implemented");
 				sv->realDeadline[j] = workloadDeadlines[j];
 				sv->prevTime[j] = get_scheduler_elapsed_time_us();
 			}
 			if(aliveTasks[j]+sv->prev_Alive[j] == 2)
 			{
-				printDBG("realDeadline changed");
-				sv->realDeadline[j] -= get_scheduler_elapsed_time_us()-sv->prevTime[j];
+				sv->realDeadline[j] = sv->realDeadline[j] - (get_scheduler_elapsed_time_us() - sv->prevTime[j]);
 			}
 			sv->prev_Alive[j] = aliveTasks[j];
 			if(aliveTasks[j]==1){
@@ -158,15 +124,19 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 		}
 		int i = sv->realDeadline[(temp%10)-1];
 		temp = temp / 10;
-		while(temp!=0)
+		while(1)
 		{
-			if(i > sv->realDeadline[(temp%10)-1])
+			if(sv->realDeadline[i-1] > sv->realDeadline[(temp%10)-1])
 			{
 				i = sv->realDeadline[(temp%10)-1];
 				prev_selection = i - 1;
 			}
 			temp = temp / 10;
-			printDBG("%d : temp", temp);
+			if(temp == 0)
+			{
+			printDBG("Breaks inner while\n");
+			break;
+			}
 		}
 		if(prev_selection != -1)
 		{

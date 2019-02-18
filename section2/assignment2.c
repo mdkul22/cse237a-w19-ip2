@@ -142,11 +142,13 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 		{
 			if((aliveTasks[j]+sv->prev_Alive[j] == 1) && (sv->prev_Alive[j]==0))
 			{
+				printDBG("realDeadline implemented");
 				sv->realDeadline[j] = workloadDeadlines[j];
 				sv->prevTime[j] = get_scheduler_elapsed_time_us();
 			}
 			if(aliveTasks[j]+sv->prev_Alive[j] == 2)
 			{
+				printDBG("realDeadline changed");
 				sv->realDeadline[j] -= get_scheduler_elapsed_time_us()-sv->prevTime[j];
 			}
 			sv->prev_Alive[j] = aliveTasks[j];
@@ -164,9 +166,11 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 				prev_selection = i - 1;
 			}
 			temp = temp / 10;
+			printDBG("%d : temp", temp);
 		}
 		if(prev_selection != -1)
 		{
+			printDBG("breaking");
 			break;
 		}
 	}
@@ -174,6 +178,6 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	// The retun value can be specified like this:
 	TaskSelection sel;
 	sel.task = prev_selection; // The thread ID which will be scheduled. i.e., 0(BUTTON) ~ 7(BUZZER)
-	sel.freq = 0; // Request the maximum frequency (if you want the minimum frequency, use 0 instead.)
+	sel.freq = 1; // Request the maximum frequency (if you want the minimum frequency, use 0 instead.)
   return sel;
 }

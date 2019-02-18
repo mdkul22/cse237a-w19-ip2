@@ -69,7 +69,7 @@ void learn_workloads(SharedVariable* sv) {
 	if(util > 1)
 	{
 	printDBG("Util beyond 100%");
-	} 
+	}
 	}
 }
 
@@ -115,11 +115,11 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 			if((aliveTasks[j]+sv->prev_Alive[j] == 1) && (sv->prev_Alive[j]==0))
 			{
 				sv->realDeadline[j] = workloadDeadlines[j];
-				sv->prevTime[j] = get_scheduler_elapsed_time_us();
+				sv->prevTime[j] = get_current_time_us();
 			}
 			if(aliveTasks[j]+sv->prev_Alive[j] == 2)
 			{
-				sv->realDeadline[j] = sv->realDeadline[j] - (get_scheduler_elapsed_time_us() - sv->prevTime[j]);
+				sv->realDeadline[j] = sv->realDeadline[j] - (get_current_time_us() - sv->prevTime[j]);
 			}
 			sv->prev_Alive[j] = aliveTasks[j];
 			if(aliveTasks[j]==1){
@@ -129,7 +129,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 		int i = (temp%10)-1;
 		temp = temp / 10;
 		while(temp!=0)
-		{	
+		{
 			if(sv->realDeadline[i] > sv->realDeadline[(temp%10)-1])
 			{
 				i = (temp%10)-1;

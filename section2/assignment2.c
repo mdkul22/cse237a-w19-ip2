@@ -108,7 +108,8 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	// Sample scheduler: Round robin
 	// It selects a next thread using aliveTasks.
 	static int prev_selection = -1;
-	int temp = 0;
+	int temp =0;
+	long long deadline = 100000000;
 	while(1){
 	for(int j=0; j < NUM_TASKS; j++)
 		{
@@ -116,29 +117,21 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 			{
 				sv->realDeadline[j] = workloadDeadlines[j];
 				sv->prevTime[j] = get_current_time_us();
+				if(realDeadline[j]<deadline){
+					deadline = realDeadline[j];
+					prev_selection = j;
+				}
 			}
 			if(aliveTasks[j]+sv->prev_Alive[j] == 2)
 			{
 				sv->realDeadline[j] = sv->realDeadline[j] - (get_current_time_us() - sv->prevTime[j]);
+				if(realDeadline[j]<deadline){
+					deadline = realDeadline[j];
+					prev_selection = j;
+
+				}
 			}
 			sv->prev_Alive[j] = aliveTasks[j];
-			if(aliveTasks[j]==1){
-				temp = 10*temp + (j+1);
-			}
-		}
-		int i = (temp%10)-1;
-		temp = temp / 10;
-		while(temp!=0)
-		{
-			if(sv->realDeadline[i] > sv->realDeadline[(temp%10)-1])
-			{
-				i = (temp%10)-1;
-				prev_selection = i;
-			}
-			else{
-				prev_selection = i;
-			}
-			temp = temp / 10;
 		}
 		if(prev_selection != -1)
 		{

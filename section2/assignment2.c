@@ -136,7 +136,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	// Sample scheduler: Round robin
 	// It selects a next thread using aliveTasks.
 	static int prev_selection = -1;
-	int temp = 0;
+	int temp;
 	while(1){
 		for(int j=0; j < NUM_TASKS; j++)
 		{
@@ -151,17 +151,17 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 			}
 			sv->prev_Alive[j] = aliveTasks[j];
 			if(aliveTasks[j]==1){
-				temp += 10*(j+1);
+				temp = 10*temp + (j+1);
 			}
 		}
-		int i = sv->realDeadline[temp%10];
+		int i = sv->realDeadline[(temp%10)-1];
 		temp = temp / 10;
 		while(temp!=0)
 		{
-			if(i > sv->realDeadline[temp%10])
+			if(i > sv->realDeadline[(temp%10)-1])
 			{
-				i = sv->realDeadline[temp%10];
-				prev_selection = i;
+				i = sv->realDeadline[(temp%10)-1];
+				prev_selection = i - 1;
 			}
 			temp = temp / 10;
 		}
@@ -170,7 +170,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 			break;
 		}
 	}
-
+	printDBG("%d: prev_selection\n", prev_selection);
 	// The retun value can be specified like this:
 	TaskSelection sel;
 	sel.task = prev_selection; // The thread ID which will be scheduled. i.e., 0(BUTTON) ~ 7(BUZZER)

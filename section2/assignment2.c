@@ -62,7 +62,6 @@ void learn_workloads(SharedVariable* sv) {
 	float util = 0;
 	for(int j=0; j<8; j++)
 	{
-	sv->tasks[j] = j;
 	sv->prev_Alive[j] = 0;
 	sv->prevTime[j] = 0;
 	util += (float)sv->duration[j]/(float)workloadDeadlines[j];

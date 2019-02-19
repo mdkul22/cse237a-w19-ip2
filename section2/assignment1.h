@@ -36,12 +36,9 @@ typedef struct shared_variable {
 	int touch; // once set to 1, metal touch sensed touch
 	int pause;
 	long long duration[8];
-	int tasks[8];
 	long long realDeadline[8];
 	int prev_Alive[8];
 	long long prevTime[8];
-	float oldUtil;
-	float newUtil;
 } SharedVariable;
 
 

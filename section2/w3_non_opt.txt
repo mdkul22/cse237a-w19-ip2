@@ -1,0 +1,1783 @@
+MIN frequency change test: 600000 == 600000
+MAX frequency change test: 1200000 == 1200000
+Start Scheduling with 8 threads
+T7's Deadline: 150 and idle time: 0
+-- 0 T7 1200000
+T7's Deadline: 150 and idle time: 0
+-- 0 T7 1200000
+T0's Deadline: 200 and idle time: 0
+-- 6 T0 1200000
+T0's Deadline: 194 and idle time: 0
+-- 10 T0 1200000
+T5's Deadline: 183 and idle time: 0
+-- 12 T5 1200000
+T5's Deadline: 171 and idle time: 0
+-- 20 T5 1200000
+T5's Deadline: 151 and idle time: 0
+-- 30 T5 1200000
+T5's Deadline: 120 and idle time: 0
+-- 40 T5 1200000
+T5's Deadline: 80 and idle time: 0
+-- 50 T5 1200000
+T4's Deadline: 30 and idle time: 0
+-- 52 T4 1200000
+T2's Deadline: 77 and idle time: 0
+-- 60 T2 1200000
+T2's Deadline: 17 and idle time: 0
+-- 70 T2 1200000
+T1's Deadline: 47 and idle time: 0
+-- 80 T1 1200000
+T3's Deadline: 166 and idle time: 0
+-- 90 T3 1200000
+T3's Deadline: 76 and idle time: 0
+-- 100 T3 1200000
+T6's Deadline: -23 and idle time: 0
+-- 106 T6 1200000
+T4's Deadline: 114 and idle time: 0
+-- 110 T4 1200000
+T2's Deadline: 294 and idle time: 0
+-- 118 T2 1200000
+T1's Deadline: 416 and idle time: 0
+-- 119 T1 1200000
+T1's Deadline: 387 and idle time: 0
+-- 120 T1 1200000
+T1's Deadline: 357 and idle time: 0
+-- 130 T1 1200000
+T6's Deadline: 663 and idle time: 0
+-- 131 T6 1200000
+T6's Deadline: 642 and idle time: 0
+-- 140 T6 1200000
+T7's Deadline: 300 and idle time: 0
+-- 150 T7 1200000
+T6's Deadline: 572 and idle time: 0
+-- 156 T6 1200000
+T0's Deadline: 400 and idle time: 41113
+-- 200 T0 1200000
+T0's Deadline: 400 and idle time: 0
+-- 200 T0 1200000
+T4's Deadline: 399 and idle time: 0
+-- 206 T4 1200000
+T4's Deadline: 393 and idle time: 0
+-- 210 T4 1200000
+T4's Deadline: 382 and idle time: 0
+-- 220 T4 1200000
+T5's Deadline: 362 and idle time: 0
+-- 222 T5 1200000
+T5's Deadline: 340 and idle time: 0
+-- 230 T5 1200000
+T5's Deadline: 309 and idle time: 0
+-- 240 T5 1200000
+T5's Deadline: 268 and idle time: 0
+-- 250 T5 1200000
+T5's Deadline: 218 and idle time: 0
+-- 260 T5 1200000
+T7's Deadline: 450 and idle time: 37521
+-- 300 T7 1200000
+T7's Deadline: 450 and idle time: 0
+-- 300 T7 1200000
+T2's Deadline: 599 and idle time: 0
+-- 306 T2 1200000
+T2's Deadline: 593 and idle time: 0
+-- 310 T2 1200000
+T2's Deadline: 582 and idle time: 0
+-- 320 T2 1200000
+T0's Deadline: 600 and idle time: 73037
+-- 400 T0 1200000
+T0's Deadline: 600 and idle time: 0
+-- 400 T0 1200000
+T4's Deadline: 599 and idle time: 0
+-- 406 T4 1200000
+T4's Deadline: 593 and idle time: 0
+-- 410 T4 1200000
+T4's Deadline: 582 and idle time: 0
+-- 420 T4 1200000
+T5's Deadline: 561 and idle time: 0
+-- 422 T5 1200000
+T5's Deadline: 539 and idle time: 0
+-- 430 T5 1200000
+T5's Deadline: 509 and idle time: 0
+-- 440 T5 1200000
+T5's Deadline: 468 and idle time: 0
+-- 450 T5 1200000
+T5's Deadline: 417 and idle time: 0
+-- 460 T5 1200000
+T1's Deadline: 557 and idle time: 0
+-- 462 T1 1200000
+T1's Deadline: 494 and idle time: 0
+-- 470 T1 1200000
+T1's Deadline: 424 and idle time: 0
+-- 480 T1 1200000
+T7's Deadline: 529 and idle time: 0
+-- 484 T7 1200000
+T7's Deadline: 496 and idle time: 109932
+-- 600 T7 1200000
+T7's Deadline: 750 and idle time: 0
+-- 600 T7 1200000
+T4's Deadline: 799 and idle time: 0
+-- 606 T4 1200000
+T4's Deadline: 793 and idle time: 0
+-- 610 T4 1200000
+T4's Deadline: 783 and idle time: 0
+-- 620 T4 1200000
+T0's Deadline: 762 and idle time: 0
+-- 622 T0 1200000
+T5's Deadline: 740 and idle time: 0
+-- 628 T5 1200000
+T5's Deadline: 712 and idle time: 0
+-- 630 T5 1200000
+T5's Deadline: 681 and idle time: 0
+-- 640 T5 1200000
+T5's Deadline: 641 and idle time: 0
+-- 650 T5 1200000
+T2's Deadline: 690 and idle time: 0
+-- 660 T2 1200000
+T2's Deadline: 630 and idle time: 0
+-- 670 T2 1200000
+T5's Deadline: 850 and idle time: 0
+-- 680 T5 1200000
+T3's Deadline: 779 and idle time: 0
+-- 688 T3 1200000
+T3's Deadline: 690 and idle time: 0
+-- 690 T3 1200000
+T6's Deadline: 600 and idle time: 0
+-- 700 T6 1200000
+T2's Deadline: 942 and idle time: 0
+-- 710 T2 1200000
+T3's Deadline: 1290 and idle time: 0
+-- 711 T3 1200000
+T6's Deadline: 1309 and idle time: 0
+-- 715 T6 1200000
+T6's Deadline: 1304 and idle time: 0
+-- 720 T6 1200000
+T7's Deadline: 900 and idle time: 19213
+-- 750 T7 1200000
+T7's Deadline: 900 and idle time: 0
+-- 750 T7 1200000
+T0's Deadline: 1000 and idle time: 43890
+-- 800 T0 1200000
+T0's Deadline: 1000 and idle time: 0
+-- 800 T0 1200000
+T4's Deadline: 999 and idle time: 0
+-- 806 T4 1200000
+T5's Deadline: 993 and idle time: 0
+-- 810 T5 1200000
+T5's Deadline: 982 and idle time: 0
+-- 820 T5 1200000
+T5's Deadline: 962 and idle time: 0
+-- 830 T5 1200000
+T5's Deadline: 931 and idle time: 0
+-- 840 T5 1200000
+T5's Deadline: 890 and idle time: 0
+-- 850 T5 1200000
+T4's Deadline: 839 and idle time: 0
+-- 851 T4 1200000
+T1's Deadline: 988 and idle time: 0
+-- 860 T1 1200000
+T1's Deadline: 928 and idle time: 0
+-- 870 T1 1200000
+T1's Deadline: 857 and idle time: 0
+-- 880 T1 1200000
+T4's Deadline: 1030 and idle time: 0
+-- 882 T4 1200000
+T7's Deadline: 1050 and idle time: 15793
+-- 900 T7 1200000
+T7's Deadline: 1050 and idle time: 0
+-- 900 T7 1200000
+T2's Deadline: 1199 and idle time: 0
+-- 906 T2 1200000
+T2's Deadline: 1193 and idle time: 0
+-- 910 T2 1200000
+T2's Deadline: 1182 and idle time: 0
+-- 920 T2 1200000
+T0's Deadline: 1200 and idle time: 72998
+-- 1000 T0 1200000
+T0's Deadline: 1200 and idle time: 0
+-- 1000 T0 1200000
+T4's Deadline: 1199 and idle time: 0
+-- 1006 T4 1200000
+T4's Deadline: 1193 and idle time: 0
+-- 1010 T4 1200000
+T4's Deadline: 1182 and idle time: 0
+-- 1020 T4 1200000
+T5's Deadline: 1161 and idle time: 0
+-- 1022 T5 1200000
+T5's Deadline: 1139 and idle time: 0
+-- 1030 T5 1200000
+T5's Deadline: 1109 and idle time: 0
+-- 1040 T5 1200000
+T5's Deadline: 1068 and idle time: 0
+-- 1050 T5 1200000
+T5's Deadline: 1017 and idle time: 0
+-- 1060 T5 1200000
+T7's Deadline: 1190 and idle time: 0
+-- 1062 T7 1200000
+T7's Deadline: 1179 and idle time: 131521
+-- 1200 T7 1200000
+T7's Deadline: 1350 and idle time: 0
+-- 1200 T7 1200000
+T0's Deadline: 1399 and idle time: 0
+-- 1206 T0 1200000
+T0's Deadline: 1393 and idle time: 0
+-- 1210 T0 1200000
+T5's Deadline: 1383 and idle time: 0
+-- 1212 T5 1200000
+T5's Deadline: 1371 and idle time: 0
+-- 1220 T5 1200000
+T5's Deadline: 1350 and idle time: 0
+-- 1230 T5 1200000
+T5's Deadline: 1320 and idle time: 0
+-- 1240 T5 1200000
+T5's Deadline: 1279 and idle time: 0
+-- 1250 T5 1200000
+T4's Deadline: 1229 and idle time: 0
+-- 1252 T4 1200000
+T2's Deadline: 1276 and idle time: 0
+-- 1260 T2 1200000
+T2's Deadline: 1216 and idle time: 0
+-- 1270 T2 1200000
+T1's Deadline: 1245 and idle time: 0
+-- 1280 T1 1200000
+T3's Deadline: 1365 and idle time: 0
+-- 1290 T3 1200000
+T3's Deadline: 1274 and idle time: 0
+-- 1300 T3 1200000
+T6's Deadline: 1174 and idle time: 0
+-- 1306 T6 1200000
+T4's Deadline: 1314 and idle time: 0
+-- 1310 T4 1200000
+T2's Deadline: 1494 and idle time: 0
+-- 1318 T2 1200000
+T1's Deadline: 1616 and idle time: 0
+-- 1319 T1 1200000
+T1's Deadline: 1587 and idle time: 0
+-- 1320 T1 1200000
+T1's Deadline: 1557 and idle time: 0
+-- 1330 T1 1200000
+T6's Deadline: 1863 and idle time: 0
+-- 1331 T6 1200000
+T6's Deadline: 1843 and idle time: 0
+-- 1340 T6 1200000
+T7's Deadline: 1500 and idle time: 0
+-- 1350 T7 1200000
+T6's Deadline: 1773 and idle time: 0
+-- 1356 T6 1200000
+T0's Deadline: 1600 and idle time: 41171
+-- 1400 T0 1200000
+T0's Deadline: 1600 and idle time: 0
+-- 1400 T0 1200000
+T5's Deadline: 1599 and idle time: 0
+-- 1406 T5 1200000
+T5's Deadline: 1593 and idle time: 0
+-- 1410 T5 1200000
+T5's Deadline: 1582 and idle time: 0
+-- 1420 T5 1200000
+T5's Deadline: 1561 and idle time: 0
+-- 1430 T5 1200000
+T5's Deadline: 1531 and idle time: 0
+-- 1440 T5 1200000
+T4's Deadline: 1490 and idle time: 0
+-- 1446 T4 1200000
+T4's Deadline: 1444 and idle time: 0
+-- 1450 T4 1200000
+T4's Deadline: 1660 and idle time: 0
+-- 1460 T4 1200000
+T7's Deadline: 1650 and idle time: 37538
+-- 1500 T7 1200000
+T7's Deadline: 1650 and idle time: 0
+-- 1500 T7 1200000
+T2's Deadline: 1799 and idle time: 0
+-- 1506 T2 1200000
+T2's Deadline: 1793 and idle time: 0
+-- 1510 T2 1200000
+T2's Deadline: 1782 and idle time: 0
+-- 1520 T2 1200000
+T0's Deadline: 1800 and idle time: 72923
+-- 1600 T0 1200000
+T0's Deadline: 1800 and idle time: 0
+-- 1600 T0 1200000
+T5's Deadline: 1799 and idle time: 0
+-- 1606 T5 1200000
+T5's Deadline: 1793 and idle time: 0
+-- 1610 T5 1200000
+T5's Deadline: 1782 and idle time: 0
+-- 1620 T5 1200000
+T5's Deadline: 1762 and idle time: 0
+-- 1630 T5 1200000
+T5's Deadline: 1731 and idle time: 0
+-- 1640 T5 1200000
+T4's Deadline: 1690 and idle time: 0
+-- 1646 T4 1200000
+T4's Deadline: 1644 and idle time: 0
+-- 1650 T4 1200000
+T1's Deadline: 1793 and idle time: 0
+-- 1660 T1 1200000
+T1's Deadline: 1733 and idle time: 0
+-- 1670 T1 1200000
+T1's Deadline: 1662 and idle time: 0
+-- 1680 T1 1200000
+T7's Deadline: 1740 and idle time: 0
+-- 1682 T7 1200000
+T4's Deadline: 1809 and idle time: 0
+-- 1688 T4 1200000
+T4's Deadline: 1781 and idle time: 109695
+-- 1800 T4 1200000
+T7's Deadline: 1950 and idle time: 0
+-- 1800 T7 1200000
+T0's Deadline: 1999 and idle time: 0
+-- 1806 T0 1200000
+T0's Deadline: 1993 and idle time: 0
+-- 1810 T0 1200000
+T5's Deadline: 1982 and idle time: 0
+-- 1812 T5 1200000
+T5's Deadline: 1970 and idle time: 0
+-- 1820 T5 1200000
+T5's Deadline: 1949 and idle time: 0
+-- 1830 T5 1200000
+T5's Deadline: 1919 and idle time: 0
+-- 1840 T5 1200000
+T5's Deadline: 1878 and idle time: 0
+-- 1850 T5 1200000
+T4's Deadline: 1832 and idle time: 0
+-- 1853 T4 1200000
+T2's Deadline: 1875 and idle time: 0
+-- 1860 T2 1200000
+T2's Deadline: 1814 and idle time: 0
+-- 1870 T2 1200000
+T3's Deadline: 2044 and idle time: 0
+-- 1880 T3 1200000
+T3's Deadline: 1963 and idle time: 0
+-- 1890 T3 1200000
+T6's Deadline: 1873 and idle time: 0
+-- 1896 T6 1200000
+T4's Deadline: 1964 and idle time: 0
+-- 1900 T4 1200000
+T2's Deadline: 2134 and idle time: 0
+-- 1908 T2 1200000
+T6's Deadline: 2492 and idle time: 0
+-- 1909 T6 1200000
+T6's Deadline: 2484 and idle time: 0
+-- 1910 T6 1200000
+T6's Deadline: 2474 and idle time: 0
+-- 1920 T6 1200000
+T6's Deadline: 2454 and idle time: 0
+-- 1930 T6 1200000
+T7's Deadline: 2100 and idle time: 18962
+-- 1950 T7 1200000
+T7's Deadline: 2100 and idle time: 0
+-- 1950 T7 1200000
+T0's Deadline: 2200 and idle time: 43890
+-- 2000 T0 1200000
+T0's Deadline: 2200 and idle time: 0
+-- 2000 T0 1200000
+T4's Deadline: 2199 and idle time: 0
+-- 2006 T4 1200000
+T4's Deadline: 2193 and idle time: 0
+-- 2010 T4 1200000
+T4's Deadline: 2182 and idle time: 0
+-- 2020 T4 1200000
+T5's Deadline: 2161 and idle time: 0
+-- 2022 T5 1200000
+T5's Deadline: 2139 and idle time: 0
+-- 2030 T5 1200000
+T5's Deadline: 2109 and idle time: 0
+-- 2040 T5 1200000
+T5's Deadline: 2068 and idle time: 0
+-- 2050 T5 1200000
+T5's Deadline: 2017 and idle time: 0
+-- 2060 T5 1200000
+T1's Deadline: 2157 and idle time: 0
+-- 2062 T1 1200000
+T1's Deadline: 2094 and idle time: 0
+-- 2070 T1 1200000
+T1's Deadline: 2023 and idle time: 0
+-- 2080 T1 1200000
+T7's Deadline: 2250 and idle time: 15783
+-- 2100 T7 1200000
+T7's Deadline: 2250 and idle time: 0
+-- 2100 T7 1200000
+T2's Deadline: 2399 and idle time: 0
+-- 2106 T2 1200000
+T2's Deadline: 2393 and idle time: 0
+-- 2110 T2 1200000
+T2's Deadline: 2382 and idle time: 0
+-- 2120 T2 1200000
+T0's Deadline: 2400 and idle time: 72925
+-- 2200 T0 1200000
+T0's Deadline: 2400 and idle time: 0
+-- 2200 T0 1200000
+T5's Deadline: 2399 and idle time: 0
+-- 2206 T5 1200000
+T5's Deadline: 2393 and idle time: 0
+-- 2210 T5 1200000
+T5's Deadline: 2382 and idle time: 0
+-- 2220 T5 1200000
+T5's Deadline: 2361 and idle time: 0
+-- 2230 T5 1200000
+T5's Deadline: 2331 and idle time: 0
+-- 2240 T5 1200000
+T4's Deadline: 2290 and idle time: 0
+-- 2246 T4 1200000
+T4's Deadline: 2244 and idle time: 0
+-- 2250 T4 1200000
+T7's Deadline: 2400 and idle time: 0
+-- 2260 T7 1200000
+T4's Deadline: 2460 and idle time: 0
+-- 2266 T4 1200000
+T4's Deadline: 2454 and idle time: 131443
+-- 2400 T4 1200000
+T4's Deadline: 2315 and idle time: 0
+-- 2400 T4 1200000
+T7's Deadline: 2549 and idle time: 0
+-- 2410 T7 1200000
+T0's Deadline: 2589 and idle time: 0
+-- 2416 T0 1200000
+T0's Deadline: 2572 and idle time: 0
+-- 2420 T0 1200000
+T5's Deadline: 2552 and idle time: 0
+-- 2422 T5 1200000
+T5's Deadline: 2529 and idle time: 0
+-- 2430 T5 1200000
+T5's Deadline: 2499 and idle time: 0
+-- 2440 T5 1200000
+T5's Deadline: 2458 and idle time: 0
+-- 2450 T5 1200000
+T4's Deadline: 2492 and idle time: 0
+-- 2460 T4 1200000
+T2's Deadline: 2447 and idle time: 0
+-- 2466 T2 1200000
+T1's Deadline: 2481 and idle time: 0
+-- 2470 T1 1200000
+T1's Deadline: 2411 and idle time: 0
+-- 2480 T1 1200000
+T3's Deadline: 2530 and idle time: 0
+-- 2490 T3 1200000
+T3's Deadline: 2440 and idle time: 0
+-- 2500 T3 1200000
+T6's Deadline: 2339 and idle time: 0
+-- 2506 T6 1200000
+T5's Deadline: 2509 and idle time: 0
+-- 2510 T5 1200000
+T2's Deadline: 2634 and idle time: 0
+-- 2513 T2 1200000
+T2's Deadline: 2592 and idle time: 0
+-- 2520 T2 1200000
+T1's Deadline: 2792 and idle time: 0
+-- 2529 T1 1200000
+T1's Deadline: 2753 and idle time: 0
+-- 2530 T1 1200000
+T6's Deadline: 3059 and idle time: 0
+-- 2531 T6 1200000
+T6's Deadline: 3038 and idle time: 0
+-- 2540 T6 1200000
+T7's Deadline: 2700 and idle time: 0
+-- 2550 T7 1200000
+T6's Deadline: 2968 and idle time: 0
+-- 2556 T6 1200000
+T0's Deadline: 2800 and idle time: 41207
+-- 2600 T0 1200000
+T0's Deadline: 2800 and idle time: 0
+-- 2600 T0 1200000
+T4's Deadline: 2799 and idle time: 0
+-- 2606 T4 1200000
+T4's Deadline: 2793 and idle time: 0
+-- 2610 T4 1200000
+T4's Deadline: 2782 and idle time: 0
+-- 2620 T4 1200000
+T5's Deadline: 2761 and idle time: 0
+-- 2622 T5 1200000
+T5's Deadline: 2739 and idle time: 0
+-- 2630 T5 1200000
+T5's Deadline: 2709 and idle time: 0
+-- 2640 T5 1200000
+T5's Deadline: 2668 and idle time: 0
+-- 2650 T5 1200000
+T5's Deadline: 2617 and idle time: 0
+-- 2660 T5 1200000
+T7's Deadline: 2850 and idle time: 37458
+-- 2700 T7 1200000
+T7's Deadline: 2850 and idle time: 0
+-- 2700 T7 1200000
+T2's Deadline: 2999 and idle time: 0
+-- 2706 T2 1200000
+T2's Deadline: 2993 and idle time: 0
+-- 2710 T2 1200000
+T2's Deadline: 2982 and idle time: 0
+-- 2720 T2 1200000
+T0's Deadline: 3000 and idle time: 72942
+-- 2800 T0 1200000
+T0's Deadline: 3000 and idle time: 0
+-- 2800 T0 1200000
+T4's Deadline: 2999 and idle time: 0
+-- 2806 T4 1200000
+T4's Deadline: 2993 and idle time: 0
+-- 2810 T4 1200000
+T4's Deadline: 2982 and idle time: 0
+-- 2820 T4 1200000
+T5's Deadline: 2961 and idle time: 0
+-- 2822 T5 1200000
+T5's Deadline: 2939 and idle time: 0
+-- 2830 T5 1200000
+T5's Deadline: 2909 and idle time: 0
+-- 2840 T5 1200000
+T5's Deadline: 2868 and idle time: 0
+-- 2850 T5 1200000
+T5's Deadline: 2817 and idle time: 0
+-- 2860 T5 1200000
+T1's Deadline: 2957 and idle time: 0
+-- 2862 T1 1200000
+T1's Deadline: 2894 and idle time: 0
+-- 2870 T1 1200000
+T1's Deadline: 2823 and idle time: 0
+-- 2880 T1 1200000
+T7's Deadline: 2929 and idle time: 0
+-- 2884 T7 1200000
+T7's Deadline: 2895 and idle time: 109639
+-- 3000 T7 1200000
+T7's Deadline: 3150 and idle time: 0
+-- 3000 T7 1200000
+T5's Deadline: 3199 and idle time: 0
+-- 3006 T5 1200000
+T5's Deadline: 3193 and idle time: 0
+-- 3010 T5 1200000
+T5's Deadline: 3183 and idle time: 0
+-- 3020 T5 1200000
+T5's Deadline: 3162 and idle time: 0
+-- 3030 T5 1200000
+T5's Deadline: 3132 and idle time: 0
+-- 3040 T5 1200000
+T4's Deadline: 3091 and idle time: 0
+-- 3046 T4 1200000
+T4's Deadline: 3045 and idle time: 0
+-- 3050 T4 1200000
+T0's Deadline: 2994 and idle time: 0
+-- 3060 T0 1200000
+T2's Deadline: 3034 and idle time: 0
+-- 3066 T2 1200000
+T4's Deadline: 3254 and idle time: 0
+-- 3070 T4 1200000
+T3's Deadline: 3196 and idle time: 0
+-- 3072 T3 1200000
+T3's Deadline: 3124 and idle time: 0
+-- 3080 T3 1200000
+T6's Deadline: 3043 and idle time: 0
+-- 3088 T6 1200000
+T2's Deadline: 3340 and idle time: 0
+-- 3090 T2 1200000
+T2's Deadline: 3320 and idle time: 0
+-- 3100 T2 1200000
+T6's Deadline: 3680 and idle time: 0
+-- 3107 T6 1200000
+T6's Deadline: 3663 and idle time: 0
+-- 3110 T6 1200000
+T6's Deadline: 3643 and idle time: 0
+-- 3120 T6 1200000
+T6's Deadline: 3613 and idle time: 0
+-- 3130 T6 1200000
+T7's Deadline: 3300 and idle time: 18877
+-- 3150 T7 1200000
+T7's Deadline: 3300 and idle time: 0
+-- 3150 T7 1200000
+T0's Deadline: 3400 and idle time: 43872
+-- 3200 T0 1200000
+T5's Deadline: 3400 and idle time: 0
+-- 3200 T5 1200000
+T5's Deadline: 3399 and idle time: 0
+-- 3210 T5 1200000
+T5's Deadline: 3388 and idle time: 0
+-- 3220 T5 1200000
+T5's Deadline: 3368 and idle time: 0
+-- 3230 T5 1200000
+T5's Deadline: 3337 and idle time: 0
+-- 3240 T5 1200000
+T0's Deadline: 3296 and idle time: 0
+-- 3241 T0 1200000
+T4's Deadline: 3255 and idle time: 0
+-- 3246 T4 1200000
+T1's Deadline: 3409 and idle time: 0
+-- 3250 T1 1200000
+T1's Deadline: 3358 and idle time: 0
+-- 3260 T1 1200000
+T1's Deadline: 3297 and idle time: 0
+-- 3270 T1 1200000
+T4's Deadline: 3420 and idle time: 0
+-- 3272 T4 1200000
+T4's Deadline: 3399 and idle time: 0
+-- 3280 T4 1200000
+T7's Deadline: 3450 and idle time: 15708
+-- 3300 T7 1200000
+T7's Deadline: 3450 and idle time: 0
+-- 3300 T7 1200000
+T2's Deadline: 3599 and idle time: 0
+-- 3306 T2 1200000
+T2's Deadline: 3593 and idle time: 0
+-- 3310 T2 1200000
+T2's Deadline: 3582 and idle time: 0
+-- 3320 T2 1200000
+T0's Deadline: 3600 and idle time: 72848
+-- 3400 T0 1200000
+T0's Deadline: 3600 and idle time: 0
+-- 3400 T0 1200000
+T5's Deadline: 3599 and idle time: 0
+-- 3406 T5 1200000
+T5's Deadline: 3593 and idle time: 0
+-- 3410 T5 1200000
+T5's Deadline: 3582 and idle time: 0
+-- 3420 T5 1200000
+T5's Deadline: 3561 and idle time: 0
+-- 3430 T5 1200000
+T5's Deadline: 3531 and idle time: 0
+-- 3440 T5 1200000
+T4's Deadline: 3490 and idle time: 0
+-- 3446 T4 1200000
+T4's Deadline: 3444 and idle time: 0
+-- 3450 T4 1200000
+T7's Deadline: 3600 and idle time: 0
+-- 3460 T7 1200000
+T4's Deadline: 3660 and idle time: 0
+-- 3466 T4 1200000
+T4's Deadline: 3654 and idle time: 131415
+-- 3600 T4 1200000
+T4's Deadline: 3515 and idle time: 0
+-- 3600 T4 1200000
+T7's Deadline: 3749 and idle time: 0
+-- 3610 T7 1200000
+T0's Deadline: 3789 and idle time: 0
+-- 3616 T0 1200000
+T0's Deadline: 3772 and idle time: 0
+-- 3620 T0 1200000
+T5's Deadline: 3752 and idle time: 0
+-- 3622 T5 1200000
+T5's Deadline: 3729 and idle time: 0
+-- 3630 T5 1200000
+T5's Deadline: 3699 and idle time: 0
+-- 3640 T5 1200000
+T5's Deadline: 3658 and idle time: 0
+-- 3650 T5 1200000
+T4's Deadline: 3692 and idle time: 0
+-- 3660 T4 1200000
+T2's Deadline: 3647 and idle time: 0
+-- 3666 T2 1200000
+T1's Deadline: 3681 and idle time: 0
+-- 3670 T1 1200000
+T1's Deadline: 3611 and idle time: 0
+-- 3680 T1 1200000
+T3's Deadline: 3730 and idle time: 0
+-- 3690 T3 1200000
+T3's Deadline: 3640 and idle time: 0
+-- 3700 T3 1200000
+T6's Deadline: 3539 and idle time: 0
+-- 3706 T6 1200000
+T5's Deadline: 3709 and idle time: 0
+-- 3710 T5 1200000
+T2's Deadline: 3834 and idle time: 0
+-- 3713 T2 1200000
+T2's Deadline: 3792 and idle time: 0
+-- 3720 T2 1200000
+T1's Deadline: 3992 and idle time: 0
+-- 3729 T1 1200000
+T1's Deadline: 3952 and idle time: 0
+-- 3730 T1 1200000
+T6's Deadline: 4259 and idle time: 0
+-- 3731 T6 1200000
+T6's Deadline: 4238 and idle time: 0
+-- 3740 T6 1200000
+T7's Deadline: 3900 and idle time: 0
+-- 3750 T7 1200000
+T6's Deadline: 4168 and idle time: 0
+-- 3756 T6 1200000
+T0's Deadline: 4000 and idle time: 40966
+-- 3800 T0 1200000
+T0's Deadline: 4000 and idle time: 0
+-- 3800 T0 1200000
+T4's Deadline: 3999 and idle time: 0
+-- 3806 T4 1200000
+T4's Deadline: 3993 and idle time: 0
+-- 3810 T4 1200000
+T4's Deadline: 3982 and idle time: 0
+-- 3820 T4 1200000
+T5's Deadline: 3961 and idle time: 0
+-- 3822 T5 1200000
+T5's Deadline: 3939 and idle time: 0
+-- 3830 T5 1200000
+T5's Deadline: 3909 and idle time: 0
+-- 3840 T5 1200000
+T5's Deadline: 3868 and idle time: 0
+-- 3850 T5 1200000
+T5's Deadline: 3817 and idle time: 0
+-- 3860 T5 1200000
+T7's Deadline: 4050 and idle time: 37366
+-- 3900 T7 1200000
+T7's Deadline: 4050 and idle time: 0
+-- 3900 T7 1200000
+T2's Deadline: 4199 and idle time: 0
+-- 3906 T2 1200000
+T2's Deadline: 4193 and idle time: 0
+-- 3910 T2 1200000
+T2's Deadline: 4182 and idle time: 0
+-- 3920 T2 1200000
+T0's Deadline: 4200 and idle time: 72911
+-- 4000 T0 1200000
+T0's Deadline: 4200 and idle time: 0
+-- 4000 T0 1200000
+T5's Deadline: 4199 and idle time: 0
+-- 4006 T5 1200000
+T5's Deadline: 4193 and idle time: 0
+-- 4010 T5 1200000
+T5's Deadline: 4182 and idle time: 0
+-- 4020 T5 1200000
+T5's Deadline: 4161 and idle time: 0
+-- 4030 T5 1200000
+T5's Deadline: 4131 and idle time: 0
+-- 4040 T5 1200000
+T4's Deadline: 4090 and idle time: 0
+-- 4046 T4 1200000
+T4's Deadline: 4044 and idle time: 0
+-- 4050 T4 1200000
+T1's Deadline: 4193 and idle time: 0
+-- 4060 T1 1200000
+T1's Deadline: 4132 and idle time: 0
+-- 4070 T1 1200000
+T1's Deadline: 4062 and idle time: 0
+-- 4080 T1 1200000
+T7's Deadline: 4140 and idle time: 0
+-- 4082 T7 1200000
+T4's Deadline: 4209 and idle time: 0
+-- 4088 T4 1200000
+T4's Deadline: 4181 and idle time: 109624
+-- 4200 T4 1200000
+T7's Deadline: 4350 and idle time: 0
+-- 4200 T7 1200000
+T0's Deadline: 4399 and idle time: 0
+-- 4206 T0 1200000
+T0's Deadline: 4393 and idle time: 0
+-- 4210 T0 1200000
+T5's Deadline: 4382 and idle time: 0
+-- 4212 T5 1200000
+T5's Deadline: 4370 and idle time: 0
+-- 4220 T5 1200000
+T5's Deadline: 4349 and idle time: 0
+-- 4230 T5 1200000
+T5's Deadline: 4319 and idle time: 0
+-- 4240 T5 1200000
+T5's Deadline: 4278 and idle time: 0
+-- 4250 T5 1200000
+T4's Deadline: 4232 and idle time: 0
+-- 4253 T4 1200000
+T2's Deadline: 4275 and idle time: 0
+-- 4260 T2 1200000
+T2's Deadline: 4214 and idle time: 0
+-- 4270 T2 1200000
+T3's Deadline: 4444 and idle time: 0
+-- 4280 T3 1200000
+T3's Deadline: 4363 and idle time: 0
+-- 4290 T3 1200000
+T6's Deadline: 4272 and idle time: 0
+-- 4296 T6 1200000
+T4's Deadline: 4364 and idle time: 0
+-- 4300 T4 1200000
+T2's Deadline: 4534 and idle time: 0
+-- 4308 T2 1200000
+T6's Deadline: 4892 and idle time: 0
+-- 4309 T6 1200000
+T6's Deadline: 4883 and idle time: 0
+-- 4310 T6 1200000
+T6's Deadline: 4873 and idle time: 0
+-- 4320 T6 1200000
+T6's Deadline: 4853 and idle time: 0
+-- 4330 T6 1200000
+T7's Deadline: 4500 and idle time: 18623
+-- 4350 T7 1200000
+T7's Deadline: 4500 and idle time: 0
+-- 4350 T7 1200000
+T0's Deadline: 4600 and idle time: 43862
+-- 4400 T0 1200000
+T0's Deadline: 4600 and idle time: 0
+-- 4400 T0 1200000
+T4's Deadline: 4599 and idle time: 0
+-- 4406 T4 1200000
+T4's Deadline: 4593 and idle time: 0
+-- 4410 T4 1200000
+T4's Deadline: 4582 and idle time: 0
+-- 4420 T4 1200000
+T5's Deadline: 4561 and idle time: 0
+-- 4422 T5 1200000
+T5's Deadline: 4539 and idle time: 0
+-- 4430 T5 1200000
+T5's Deadline: 4509 and idle time: 0
+-- 4440 T5 1200000
+T5's Deadline: 4468 and idle time: 0
+-- 4450 T5 1200000
+T5's Deadline: 4417 and idle time: 0
+-- 4460 T5 1200000
+T1's Deadline: 4557 and idle time: 0
+-- 4462 T1 1200000
+T1's Deadline: 4494 and idle time: 0
+-- 4470 T1 1200000
+T1's Deadline: 4423 and idle time: 0
+-- 4480 T1 1200000
+T7's Deadline: 4650 and idle time: 15615
+-- 4500 T7 1200000
+T7's Deadline: 4650 and idle time: 0
+-- 4500 T7 1200000
+T2's Deadline: 4799 and idle time: 0
+-- 4506 T2 1200000
+T2's Deadline: 4793 and idle time: 0
+-- 4510 T2 1200000
+T2's Deadline: 4782 and idle time: 0
+-- 4520 T2 1200000
+T0's Deadline: 4800 and idle time: 72885
+-- 4600 T0 1200000
+T0's Deadline: 4800 and idle time: 0
+-- 4600 T0 1200000
+T5's Deadline: 4799 and idle time: 0
+-- 4606 T5 1200000
+T5's Deadline: 4793 and idle time: 0
+-- 4610 T5 1200000
+T5's Deadline: 4782 and idle time: 0
+-- 4620 T5 1200000
+T5's Deadline: 4762 and idle time: 0
+-- 4630 T5 1200000
+T5's Deadline: 4731 and idle time: 0
+-- 4640 T5 1200000
+T4's Deadline: 4690 and idle time: 0
+-- 4646 T4 1200000
+T4's Deadline: 4644 and idle time: 0
+-- 4650 T4 1200000
+T7's Deadline: 4800 and idle time: 0
+-- 4660 T7 1200000
+T4's Deadline: 4860 and idle time: 0
+-- 4666 T4 1200000
+T4's Deadline: 4854 and idle time: 131233
+-- 4800 T4 1200000
+T4's Deadline: 4715 and idle time: 0
+-- 4800 T4 1200000
+T7's Deadline: 4949 and idle time: 0
+-- 4810 T7 1200000
+T0's Deadline: 4989 and idle time: 0
+-- 4816 T0 1200000
+T0's Deadline: 4972 and idle time: 0
+-- 4820 T0 1200000
+T5's Deadline: 4952 and idle time: 0
+-- 4822 T5 1200000
+T5's Deadline: 4929 and idle time: 0
+-- 4830 T5 1200000
+T5's Deadline: 4899 and idle time: 0
+-- 4840 T5 1200000
+T5's Deadline: 4858 and idle time: 0
+-- 4850 T5 1200000
+T4's Deadline: 4892 and idle time: 0
+-- 4860 T4 1200000
+T2's Deadline: 4847 and idle time: 0
+-- 4866 T2 1200000
+T1's Deadline: 4881 and idle time: 0
+-- 4870 T1 1200000
+T1's Deadline: 4811 and idle time: 0
+-- 4880 T1 1200000
+T6's Deadline: 4930 and idle time: 0
+-- 4890 T6 1200000
+T6's Deadline: 4840 and idle time: 0
+-- 4900 T6 1200000
+T3's Deadline: 4739 and idle time: 0
+-- 4910 T3 1200000
+T5's Deadline: 4905 and idle time: 0
+-- 4920 T5 1200000
+T2's Deadline: 5020 and idle time: 0
+-- 4923 T2 1200000
+T2's Deadline: 4968 and idle time: 0
+-- 4930 T2 1200000
+T1's Deadline: 5158 and idle time: 0
+-- 4940 T1 1200000
+T1's Deadline: 5108 and idle time: 0
+-- 4940 T1 1200000
+T6's Deadline: 5408 and idle time: 0
+-- 4941 T6 1200000
+T3's Deadline: 5447 and idle time: 0
+-- 4947 T3 1200000
+T7's Deadline: 5100 and idle time: 0
+-- 4950 T7 1200000
+T3's Deadline: 5391 and idle time: 0
+-- 4956 T3 1200000
+T0's Deadline: 5200 and idle time: 40666
+-- 5000 T0 1200000
+T4's Deadline: 5200 and idle time: 0
+-- 5000 T4 1200000
+T4's Deadline: 5199 and idle time: 0
+-- 5010 T4 1200000
+T0's Deadline: 5188 and idle time: 0
+-- 5016 T0 1200000
+T0's Deadline: 5171 and idle time: 0
+-- 5020 T0 1200000
+T5's Deadline: 5151 and idle time: 0
+-- 5022 T5 1200000
+T5's Deadline: 5128 and idle time: 0
+-- 5030 T5 1200000
+T5's Deadline: 5098 and idle time: 0
+-- 5040 T5 1200000
+T5's Deadline: 5057 and idle time: 0
+-- 5050 T5 1200000
+T5's Deadline: 5260 and idle time: 0
+-- 5060 T5 1200000
+T7's Deadline: 5250 and idle time: 37280
+-- 5100 T7 1200000
+T7's Deadline: 5250 and idle time: 0
+-- 5100 T7 1200000
+T2's Deadline: 5399 and idle time: 0
+-- 5106 T2 1200000
+T2's Deadline: 5393 and idle time: 0
+-- 5110 T2 1200000
+T2's Deadline: 5382 and idle time: 0
+-- 5120 T2 1200000
+T0's Deadline: 5400 and idle time: 72857
+-- 5200 T0 1200000
+T0's Deadline: 5400 and idle time: 0
+-- 5200 T0 1200000
+T5's Deadline: 5399 and idle time: 0
+-- 5206 T5 1200000
+T5's Deadline: 5393 and idle time: 0
+-- 5210 T5 1200000
+T5's Deadline: 5382 and idle time: 0
+-- 5220 T5 1200000
+T5's Deadline: 5361 and idle time: 0
+-- 5230 T5 1200000
+T5's Deadline: 5331 and idle time: 0
+-- 5240 T5 1200000
+T4's Deadline: 5290 and idle time: 0
+-- 5246 T4 1200000
+T4's Deadline: 5244 and idle time: 0
+-- 5250 T4 1200000
+T1's Deadline: 5393 and idle time: 0
+-- 5260 T1 1200000
+T1's Deadline: 5332 and idle time: 0
+-- 5270 T1 1200000
+T1's Deadline: 5262 and idle time: 0
+-- 5280 T1 1200000
+T7's Deadline: 5340 and idle time: 0
+-- 5282 T7 1200000
+T4's Deadline: 5409 and idle time: 0
+-- 5288 T4 1200000
+T4's Deadline: 5381 and idle time: 109537
+-- 5400 T4 1200000
+T7's Deadline: 5550 and idle time: 0
+-- 5400 T7 1200000
+T0's Deadline: 5599 and idle time: 0
+-- 5406 T0 1200000
+T0's Deadline: 5593 and idle time: 0
+-- 5410 T0 1200000
+T5's Deadline: 5582 and idle time: 0
+-- 5412 T5 1200000
+T5's Deadline: 5570 and idle time: 0
+-- 5420 T5 1200000
+T5's Deadline: 5549 and idle time: 0
+-- 5430 T5 1200000
+T5's Deadline: 5519 and idle time: 0
+-- 5440 T5 1200000
+T5's Deadline: 5478 and idle time: 0
+-- 5450 T5 1200000
+T4's Deadline: 5432 and idle time: 0
+-- 5453 T4 1200000
+T2's Deadline: 5475 and idle time: 0
+-- 5460 T2 1200000
+T2's Deadline: 5414 and idle time: 0
+-- 5470 T2 1200000
+T3's Deadline: 5643 and idle time: 0
+-- 5480 T3 1200000
+T3's Deadline: 5563 and idle time: 0
+-- 5490 T3 1200000
+T6's Deadline: 5472 and idle time: 0
+-- 5497 T6 1200000
+T4's Deadline: 5564 and idle time: 0
+-- 5500 T4 1200000
+T2's Deadline: 5734 and idle time: 0
+-- 5508 T2 1200000
+T6's Deadline: 6092 and idle time: 0
+-- 5509 T6 1200000
+T6's Deadline: 6083 and idle time: 0
+-- 5510 T6 1200000
+T6's Deadline: 6073 and idle time: 0
+-- 5520 T6 1200000
+T6's Deadline: 6053 and idle time: 0
+-- 5530 T6 1200000
+T7's Deadline: 5700 and idle time: 18512
+-- 5550 T7 1200000
+T7's Deadline: 5700 and idle time: 0
+-- 5550 T7 1200000
+T0's Deadline: 5800 and idle time: 43849
+-- 5600 T0 1200000
+T0's Deadline: 5800 and idle time: 0
+-- 5600 T0 1200000
+T5's Deadline: 5799 and idle time: 0
+-- 5606 T5 1200000
+T5's Deadline: 5793 and idle time: 0
+-- 5610 T5 1200000
+T5's Deadline: 5782 and idle time: 0
+-- 5620 T5 1200000
+T5's Deadline: 5761 and idle time: 0
+-- 5630 T5 1200000
+T5's Deadline: 5731 and idle time: 0
+-- 5640 T5 1200000
+T4's Deadline: 5690 and idle time: 0
+-- 5646 T4 1200000
+T4's Deadline: 5644 and idle time: 0
+-- 5650 T4 1200000
+T1's Deadline: 5793 and idle time: 0
+-- 5660 T1 1200000
+T1's Deadline: 5732 and idle time: 0
+-- 5670 T1 1200000
+T1's Deadline: 5662 and idle time: 0
+-- 5680 T1 1200000
+T4's Deadline: 5830 and idle time: 0
+-- 5682 T4 1200000
+T7's Deadline: 5850 and idle time: 15472
+-- 5700 T7 1200000
+T7's Deadline: 5850 and idle time: 0
+-- 5700 T7 1200000
+T2's Deadline: 5999 and idle time: 0
+-- 5706 T2 1200000
+T2's Deadline: 5993 and idle time: 0
+-- 5710 T2 1200000
+T2's Deadline: 5982 and idle time: 0
+-- 5720 T2 1200000
+T0's Deadline: 6000 and idle time: 72813
+-- 5800 T0 1200000
+T0's Deadline: 6000 and idle time: 0
+-- 5800 T0 1200000
+T5's Deadline: 5999 and idle time: 0
+-- 5806 T5 1200000
+T5's Deadline: 5993 and idle time: 0
+-- 5810 T5 1200000
+T5's Deadline: 5982 and idle time: 0
+-- 5820 T5 1200000
+T5's Deadline: 5961 and idle time: 0
+-- 5830 T5 1200000
+T5's Deadline: 5931 and idle time: 0
+-- 5840 T5 1200000
+T4's Deadline: 5890 and idle time: 0
+-- 5846 T4 1200000
+T4's Deadline: 5844 and idle time: 0
+-- 5850 T4 1200000
+T7's Deadline: 6000 and idle time: 0
+-- 5860 T7 1200000
+T4's Deadline: 6060 and idle time: 0
+-- 5866 T4 1200000
+T4's Deadline: 6054 and idle time: 131260
+-- 6000 T4 1200000
+T4's Deadline: 5915 and idle time: 0
+-- 6000 T4 1200000
+T7's Deadline: 6149 and idle time: 0
+-- 6010 T7 1200000
+T0's Deadline: 6189 and idle time: 0
+-- 6016 T0 1200000
+T0's Deadline: 6172 and idle time: 0
+-- 6020 T0 1200000
+T5's Deadline: 6152 and idle time: 0
+-- 6023 T5 1200000
+T5's Deadline: 6129 and idle time: 0
+-- 6030 T5 1200000
+T5's Deadline: 6099 and idle time: 0
+-- 6040 T5 1200000
+T5's Deadline: 6058 and idle time: 0
+-- 6050 T5 1200000
+T4's Deadline: 6092 and idle time: 0
+-- 6060 T4 1200000
+T2's Deadline: 6047 and idle time: 0
+-- 6066 T2 1200000
+T1's Deadline: 6081 and idle time: 0
+-- 6070 T1 1200000
+T1's Deadline: 6010 and idle time: 0
+-- 6080 T1 1200000
+T3's Deadline: 6130 and idle time: 0
+-- 6090 T3 1200000
+T3's Deadline: 6039 and idle time: 0
+-- 6100 T3 1200000
+T6's Deadline: 5939 and idle time: 0
+-- 6106 T6 1200000
+T5's Deadline: 6108 and idle time: 0
+-- 6110 T5 1200000
+T2's Deadline: 6234 and idle time: 0
+-- 6113 T2 1200000
+T2's Deadline: 6192 and idle time: 0
+-- 6120 T2 1200000
+T1's Deadline: 6391 and idle time: 0
+-- 6130 T1 1200000
+T1's Deadline: 6352 and idle time: 0
+-- 6130 T1 1200000
+T6's Deadline: 6658 and idle time: 0
+-- 6131 T6 1200000
+T6's Deadline: 6637 and idle time: 0
+-- 6140 T6 1200000
+T7's Deadline: 6300 and idle time: 0
+-- 6150 T7 1200000
+T6's Deadline: 6567 and idle time: 0
+-- 6156 T6 1200000
+T0's Deadline: 6400 and idle time: 40627
+-- 6200 T0 1200000
+T0's Deadline: 6400 and idle time: 0
+-- 6200 T0 1200000
+T5's Deadline: 6399 and idle time: 0
+-- 6206 T5 1200000
+T5's Deadline: 6393 and idle time: 0
+-- 6210 T5 1200000
+T5's Deadline: 6382 and idle time: 0
+-- 6220 T5 1200000
+T5's Deadline: 6361 and idle time: 0
+-- 6230 T5 1200000
+T5's Deadline: 6331 and idle time: 0
+-- 6240 T5 1200000
+T4's Deadline: 6290 and idle time: 0
+-- 6246 T4 1200000
+T4's Deadline: 6244 and idle time: 0
+-- 6250 T4 1200000
+T4's Deadline: 6460 and idle time: 0
+-- 6260 T4 1200000
+T7's Deadline: 6450 and idle time: 37227
+-- 6300 T7 1200000
+T7's Deadline: 6450 and idle time: 0
+-- 6300 T7 1200000
+T2's Deadline: 6599 and idle time: 0
+-- 6306 T2 1200000
+T2's Deadline: 6593 and idle time: 0
+-- 6310 T2 1200000
+T2's Deadline: 6582 and idle time: 0
+-- 6320 T2 1200000
+T0's Deadline: 6600 and idle time: 72825
+-- 6400 T0 1200000
+T5's Deadline: 6600 and idle time: 0
+-- 6400 T5 1200000
+T5's Deadline: 6599 and idle time: 0
+-- 6410 T5 1200000
+T5's Deadline: 6588 and idle time: 0
+-- 6420 T5 1200000
+T5's Deadline: 6568 and idle time: 0
+-- 6430 T5 1200000
+T5's Deadline: 6537 and idle time: 0
+-- 6440 T5 1200000
+T0's Deadline: 6496 and idle time: 0
+-- 6441 T0 1200000
+T4's Deadline: 6455 and idle time: 0
+-- 6446 T4 1200000
+T7's Deadline: 6600 and idle time: 0
+-- 6450 T7 1200000
+T1's Deadline: 6558 and idle time: 0
+-- 6456 T1 1200000
+T1's Deadline: 6501 and idle time: 0
+-- 6460 T1 1200000
+T1's Deadline: 6440 and idle time: 0
+-- 6470 T1 1200000
+T4's Deadline: 6614 and idle time: 0
+-- 6478 T4 1200000
+T4's Deadline: 6587 and idle time: 0
+-- 6480 T4 1200000
+T4's Deadline: 6557 and idle time: 109470
+-- 6600 T4 1200000
+T7's Deadline: 6750 and idle time: 0
+-- 6600 T7 1200000
+T0's Deadline: 6799 and idle time: 0
+-- 6606 T0 1200000
+T0's Deadline: 6793 and idle time: 0
+-- 6610 T0 1200000
+T5's Deadline: 6782 and idle time: 0
+-- 6612 T5 1200000
+T5's Deadline: 6770 and idle time: 0
+-- 6620 T5 1200000
+T5's Deadline: 6749 and idle time: 0
+-- 6630 T5 1200000
+T5's Deadline: 6719 and idle time: 0
+-- 6640 T5 1200000
+T5's Deadline: 6678 and idle time: 0
+-- 6650 T5 1200000
+T4's Deadline: 6632 and idle time: 0
+-- 6653 T4 1200000
+T2's Deadline: 6674 and idle time: 0
+-- 6660 T2 1200000
+T2's Deadline: 6614 and idle time: 0
+-- 6670 T2 1200000
+T3's Deadline: 6843 and idle time: 0
+-- 6680 T3 1200000
+T3's Deadline: 6763 and idle time: 0
+-- 6690 T3 1200000
+T6's Deadline: 6672 and idle time: 0
+-- 6697 T6 1200000
+T4's Deadline: 6764 and idle time: 0
+-- 6700 T4 1200000
+T2's Deadline: 6934 and idle time: 0
+-- 6709 T2 1200000
+T6's Deadline: 7292 and idle time: 0
+-- 6710 T6 1200000
+T6's Deadline: 7283 and idle time: 0
+-- 6710 T6 1200000
+T6's Deadline: 7273 and idle time: 0
+-- 6720 T6 1200000
+T6's Deadline: 7253 and idle time: 0
+-- 6730 T6 1200000
+T7's Deadline: 6900 and idle time: 18250
+-- 6750 T7 1200000
+T7's Deadline: 6900 and idle time: 0
+-- 6750 T7 1200000
+T0's Deadline: 7000 and idle time: 43837
+-- 6800 T0 1200000
+T5's Deadline: 7000 and idle time: 0
+-- 6800 T5 1200000
+T5's Deadline: 6999 and idle time: 0
+-- 6810 T5 1200000
+T5's Deadline: 6988 and idle time: 0
+-- 6820 T5 1200000
+T5's Deadline: 6968 and idle time: 0
+-- 6830 T5 1200000
+T5's Deadline: 6937 and idle time: 0
+-- 6840 T5 1200000
+T0's Deadline: 6896 and idle time: 0
+-- 6841 T0 1200000
+T4's Deadline: 6855 and idle time: 0
+-- 6846 T4 1200000
+T1's Deadline: 7008 and idle time: 0
+-- 6850 T1 1200000
+T1's Deadline: 6958 and idle time: 0
+-- 6860 T1 1200000
+T1's Deadline: 6897 and idle time: 0
+-- 6870 T1 1200000
+T4's Deadline: 7020 and idle time: 0
+-- 6872 T4 1200000
+T4's Deadline: 6999 and idle time: 0
+-- 6880 T4 1200000
+T7's Deadline: 7050 and idle time: 15337
+-- 6900 T7 1200000
+T7's Deadline: 7050 and idle time: 0
+-- 6900 T7 1200000
+T2's Deadline: 7199 and idle time: 0
+-- 6906 T2 1200000
+T2's Deadline: 7193 and idle time: 0
+-- 6910 T2 1200000
+T2's Deadline: 7182 and idle time: 0
+-- 6920 T2 1200000
+T0's Deadline: 7200 and idle time: 72738
+-- 7000 T0 1200000
+T0's Deadline: 7200 and idle time: 0
+-- 7000 T0 1200000
+T5's Deadline: 7199 and idle time: 0
+-- 7006 T5 1200000
+T5's Deadline: 7193 and idle time: 0
+-- 7010 T5 1200000
+T5's Deadline: 7182 and idle time: 0
+-- 7020 T5 1200000
+T5's Deadline: 7161 and idle time: 0
+-- 7030 T5 1200000
+T5's Deadline: 7131 and idle time: 0
+-- 7040 T5 1200000
+T4's Deadline: 7090 and idle time: 0
+-- 7047 T4 1200000
+T4's Deadline: 7042 and idle time: 0
+-- 7050 T4 1200000
+T7's Deadline: 7200 and idle time: 0
+-- 7060 T7 1200000
+T4's Deadline: 7260 and idle time: 0
+-- 7066 T4 1200000
+T4's Deadline: 7254 and idle time: 130011
+-- 7200 T4 1200000
+T4's Deadline: 7115 and idle time: 0
+-- 7200 T4 1200000
+T7's Deadline: 7349 and idle time: 0
+-- 7210 T7 1200000
+T0's Deadline: 7389 and idle time: 0
+-- 7216 T0 1200000
+T0's Deadline: 7372 and idle time: 0
+-- 7220 T0 1200000
+T5's Deadline: 7352 and idle time: 0
+-- 7222 T5 1200000
+T5's Deadline: 7329 and idle time: 0
+-- 7230 T5 1200000
+T5's Deadline: 7299 and idle time: 0
+-- 7240 T5 1200000
+T5's Deadline: 7258 and idle time: 0
+-- 7250 T5 1200000
+T4's Deadline: 7292 and idle time: 0
+-- 7260 T4 1200000
+T2's Deadline: 7247 and idle time: 0
+-- 7266 T2 1200000
+T1's Deadline: 7281 and idle time: 0
+-- 7270 T1 1200000
+T1's Deadline: 7211 and idle time: 0
+-- 7280 T1 1200000
+T3's Deadline: 7330 and idle time: 0
+-- 7290 T3 1200000
+T3's Deadline: 7240 and idle time: 0
+-- 7300 T3 1200000
+T6's Deadline: 7139 and idle time: 0
+-- 7307 T6 1200000
+T5's Deadline: 7308 and idle time: 0
+-- 7310 T5 1200000
+T2's Deadline: 7434 and idle time: 0
+-- 7313 T2 1200000
+T2's Deadline: 7391 and idle time: 0
+-- 7320 T2 1200000
+T1's Deadline: 7591 and idle time: 0
+-- 7330 T1 1200000
+T1's Deadline: 7552 and idle time: 0
+-- 7330 T1 1200000
+T6's Deadline: 7858 and idle time: 0
+-- 7332 T6 1200000
+T6's Deadline: 7837 and idle time: 0
+-- 7340 T6 1200000
+T7's Deadline: 7500 and idle time: 0
+-- 7350 T7 1200000
+T6's Deadline: 7767 and idle time: 0
+-- 7356 T6 1200000
+T0's Deadline: 7600 and idle time: 40384
+-- 7400 T0 1200000
+T0's Deadline: 7600 and idle time: 0
+-- 7400 T0 1200000
+T4's Deadline: 7599 and idle time: 0
+-- 7406 T4 1200000
+T4's Deadline: 7593 and idle time: 0
+-- 7410 T4 1200000
+T4's Deadline: 7582 and idle time: 0
+-- 7420 T4 1200000
+T5's Deadline: 7561 and idle time: 0
+-- 7422 T5 1200000
+T5's Deadline: 7539 and idle time: 0
+-- 7430 T5 1200000
+T5's Deadline: 7508 and idle time: 0
+-- 7440 T5 1200000
+T5's Deadline: 7468 and idle time: 0
+-- 7450 T5 1200000
+T5's Deadline: 7417 and idle time: 0
+-- 7460 T5 1200000
+T7's Deadline: 7650 and idle time: 37111
+-- 7500 T7 1200000
+T7's Deadline: 7650 and idle time: 0
+-- 7500 T7 1200000
+T2's Deadline: 7799 and idle time: 0
+-- 7506 T2 1200000
+T2's Deadline: 7793 and idle time: 0
+-- 7510 T2 1200000
+T2's Deadline: 7782 and idle time: 0
+-- 7520 T2 1200000
+T0's Deadline: 7800 and idle time: 72808
+-- 7600 T0 1200000
+T0's Deadline: 7800 and idle time: 0
+-- 7600 T0 1200000
+T4's Deadline: 7799 and idle time: 0
+-- 7606 T4 1200000
+T4's Deadline: 7793 and idle time: 0
+-- 7610 T4 1200000
+T4's Deadline: 7782 and idle time: 0
+-- 7620 T4 1200000
+T5's Deadline: 7762 and idle time: 0
+-- 7622 T5 1200000
+T5's Deadline: 7739 and idle time: 0
+-- 7630 T5 1200000
+T5's Deadline: 7709 and idle time: 0
+-- 7640 T5 1200000
+T5's Deadline: 7668 and idle time: 0
+-- 7650 T5 1200000
+T5's Deadline: 7617 and idle time: 0
+-- 7660 T5 1200000
+T1's Deadline: 7757 and idle time: 0
+-- 7663 T1 1200000
+T1's Deadline: 7694 and idle time: 0
+-- 7670 T1 1200000
+T1's Deadline: 7623 and idle time: 0
+-- 7680 T1 1200000
+T7's Deadline: 7728 and idle time: 0
+-- 7684 T7 1200000
+T7's Deadline: 7694 and idle time: 0
+-- 7690 T7 1200000
+T7's Deadline: 7950 and idle time: 109061
+-- 7800 T7 1200000
+T7's Deadline: 7950 and idle time: 0
+-- 7800 T7 1200000
+T0's Deadline: 7999 and idle time: 0
+-- 7806 T0 1200000
+T0's Deadline: 7993 and idle time: 0
+-- 7810 T0 1200000
+T4's Deadline: 7983 and idle time: 0
+-- 7812 T4 1200000
+T4's Deadline: 7970 and idle time: 0
+-- 7820 T4 1200000
+T5's Deadline: 7950 and idle time: 0
+-- 7828 T5 1200000
+T5's Deadline: 7922 and idle time: 0
+-- 7830 T5 1200000
+T5's Deadline: 7891 and idle time: 0
+-- 7840 T5 1200000
+T5's Deadline: 7850 and idle time: 0
+-- 7850 T5 1200000
+T2's Deadline: 7900 and idle time: 0
+-- 7860 T2 1200000
+T2's Deadline: 7839 and idle time: 0
+-- 7870 T2 1200000
+T5's Deadline: 8050 and idle time: 0
+-- 7880 T5 1200000
+T3's Deadline: 7988 and idle time: 0
+-- 7889 T3 1200000
+T3's Deadline: 7899 and idle time: 0
+-- 7890 T3 1200000
+T6's Deadline: 7809 and idle time: 0
+-- 7900 T6 1200000
+T2's Deadline: 8142 and idle time: 0
+-- 7910 T2 1200000
+T3's Deadline: 8490 and idle time: 0
+-- 7911 T3 1200000
+T6's Deadline: 8509 and idle time: 0
+-- 7916 T6 1200000
+T6's Deadline: 8504 and idle time: 0
+-- 7920 T6 1200000
+T6's Deadline: 8494 and idle time: 0
+-- 7930 T6 1200000
+T7's Deadline: 8100 and idle time: 18211
+-- 7950 T7 1200000
+T7's Deadline: 8100 and idle time: 0
+-- 7950 T7 1200000
+T0's Deadline: 8200 and idle time: 43830
+-- 8000 T0 1200000
+T0's Deadline: 8200 and idle time: 0
+-- 8000 T0 1200000
+T4's Deadline: 8199 and idle time: 0
+-- 8006 T4 1200000
+T4's Deadline: 8193 and idle time: 0
+-- 8010 T4 1200000
+T4's Deadline: 8182 and idle time: 0
+-- 8020 T4 1200000
+T5's Deadline: 8161 and idle time: 0
+-- 8022 T5 1200000
+T5's Deadline: 8139 and idle time: 0
+-- 8030 T5 1200000
+T5's Deadline: 8108 and idle time: 0
+-- 8040 T5 1200000
+T5's Deadline: 8068 and idle time: 0
+-- 8050 T5 1200000
+T5's Deadline: 8017 and idle time: 0
+-- 8060 T5 1200000
+T1's Deadline: 8156 and idle time: 0
+-- 8062 T1 1200000
+T1's Deadline: 8094 and idle time: 0
+-- 8070 T1 1200000
+T1's Deadline: 8023 and idle time: 0
+-- 8080 T1 1200000
+T7's Deadline: 8250 and idle time: 15306
+-- 8100 T7 1200000
+T7's Deadline: 8250 and idle time: 0
+-- 8100 T7 1200000
+T2's Deadline: 8399 and idle time: 0
+-- 8106 T2 1200000
+T2's Deadline: 8393 and idle time: 0
+-- 8110 T2 1200000
+T2's Deadline: 8382 and idle time: 0
+-- 8120 T2 1200000
+T0's Deadline: 8400 and idle time: 72726
+-- 8200 T0 1200000
+T0's Deadline: 8400 and idle time: 0
+-- 8200 T0 1200000
+T4's Deadline: 8399 and idle time: 0
+-- 8206 T4 1200000
+T4's Deadline: 8393 and idle time: 0
+-- 8210 T4 1200000
+T4's Deadline: 8382 and idle time: 0
+-- 8220 T4 1200000
+T5's Deadline: 8361 and idle time: 0
+-- 8222 T5 1200000
+T5's Deadline: 8339 and idle time: 0
+-- 8230 T5 1200000
+T5's Deadline: 8308 and idle time: 0
+-- 8240 T5 1200000
+T5's Deadline: 8268 and idle time: 0
+-- 8250 T5 1200000
+T5's Deadline: 8217 and idle time: 0
+-- 8260 T5 1200000
+T7's Deadline: 8390 and idle time: 0
+-- 8262 T7 1200000
+T7's Deadline: 8378 and idle time: 131089
+-- 8400 T7 1200000
+T7's Deadline: 8550 and idle time: 0
+-- 8400 T7 1200000
+T4's Deadline: 8599 and idle time: 0
+-- 8406 T4 1200000
+T4's Deadline: 8593 and idle time: 0
+-- 8410 T4 1200000
+T4's Deadline: 8583 and idle time: 0
+-- 8420 T4 1200000
+T0's Deadline: 8562 and idle time: 0
+-- 8422 T0 1200000
+T5's Deadline: 8540 and idle time: 0
+-- 8428 T5 1200000
+T5's Deadline: 8511 and idle time: 0
+-- 8430 T5 1200000
+T5's Deadline: 8481 and idle time: 0
+-- 8440 T5 1200000
+T5's Deadline: 8440 and idle time: 0
+-- 8450 T5 1200000
+T2's Deadline: 8490 and idle time: 0
+-- 8460 T2 1200000
+T2's Deadline: 8429 and idle time: 0
+-- 8470 T2 1200000
+T1's Deadline: 8459 and idle time: 0
+-- 8480 T1 1200000
+T3's Deadline: 8578 and idle time: 0
+-- 8490 T3 1200000
+T3's Deadline: 8488 and idle time: 0
+-- 8500 T3 1200000
+T6's Deadline: 8387 and idle time: 0
+-- 8507 T6 1200000
+T5's Deadline: 8514 and idle time: 0
+-- 8510 T5 1200000
+T2's Deadline: 8694 and idle time: 0
+-- 8519 T2 1200000
+T1's Deadline: 8816 and idle time: 0
+-- 8520 T1 1200000
+T1's Deadline: 8786 and idle time: 0
+-- 8520 T1 1200000
+T1's Deadline: 8756 and idle time: 0
+-- 8530 T1 1200000
+T6's Deadline: 9062 and idle time: 0
+-- 8532 T6 1200000
+T6's Deadline: 9041 and idle time: 0
+-- 8540 T6 1200000
+T7's Deadline: 8700 and idle time: 0
+-- 8550 T7 1200000
+T6's Deadline: 8971 and idle time: 0
+-- 8556 T6 1200000
+T0's Deadline: 8800 and idle time: 40327
+-- 8600 T0 1200000
+T0's Deadline: 8800 and idle time: 0
+-- 8600 T0 1200000
+T4's Deadline: 8799 and idle time: 0
+-- 8606 T4 1200000
+T5's Deadline: 8793 and idle time: 0
+-- 8610 T5 1200000
+T5's Deadline: 8782 and idle time: 0
+-- 8620 T5 1200000
+T5's Deadline: 8761 and idle time: 0
+-- 8630 T5 1200000
+T5's Deadline: 8731 and idle time: 0
+-- 8640 T5 1200000
+T5's Deadline: 8690 and idle time: 0
+-- 8650 T5 1200000
+T4's Deadline: 8639 and idle time: 0
+-- 8651 T4 1200000
+T4's Deadline: 8860 and idle time: 0
+-- 8660 T4 1200000
+T7's Deadline: 8850 and idle time: 37081
+-- 8700 T7 1200000
+T7's Deadline: 8850 and idle time: 0
+-- 8700 T7 1200000
+T2's Deadline: 8999 and idle time: 0
+-- 8706 T2 1200000
+T2's Deadline: 8993 and idle time: 0
+-- 8710 T2 1200000
+T2's Deadline: 8982 and idle time: 0
+-- 8720 T2 1200000
+T0's Deadline: 9000 and idle time: 72755
+-- 8800 T0 1200000
+T0's Deadline: 9000 and idle time: 0
+-- 8800 T0 1200000
+T4's Deadline: 8999 and idle time: 0
+-- 8806 T4 1200000
+T5's Deadline: 8993 and idle time: 0
+-- 8810 T5 1200000
+T5's Deadline: 8982 and idle time: 0
+-- 8820 T5 1200000
+T5's Deadline: 8961 and idle time: 0
+-- 8830 T5 1200000
+T5's Deadline: 8931 and idle time: 0
+-- 8840 T5 1200000
+T5's Deadline: 8890 and idle time: 0
+-- 8850 T5 1200000
+T4's Deadline: 8839 and idle time: 0
+-- 8851 T4 1200000
+T1's Deadline: 8988 and idle time: 0
+-- 8860 T1 1200000
+T1's Deadline: 8927 and idle time: 0
+-- 8870 T1 1200000
+T1's Deadline: 8856 and idle time: 0
+-- 8880 T1 1200000
+T7's Deadline: 8940 and idle time: 0
+-- 8882 T7 1200000
+T4's Deadline: 9008 and idle time: 0
+-- 8888 T4 1200000
+T4's Deadline: 8981 and idle time: 0
+-- 8890 T4 1200000
+T4's Deadline: 8951 and idle time: 108717
+-- 9000 T4 1200000
+T7's Deadline: 9150 and idle time: 0
+-- 9000 T7 1200000
+T0's Deadline: 9199 and idle time: 0
+-- 9006 T0 1200000
+T0's Deadline: 9193 and idle time: 0
+-- 9010 T0 1200000
+T5's Deadline: 9182 and idle time: 0
+-- 9012 T5 1200000
+T5's Deadline: 9170 and idle time: 0
+-- 9020 T5 1200000
+T5's Deadline: 9149 and idle time: 0
+-- 9030 T5 1200000
+T5's Deadline: 9118 and idle time: 0
+-- 9040 T5 1200000
+T5's Deadline: 9078 and idle time: 0
+-- 9050 T5 1200000
+T4's Deadline: 9032 and idle time: 0
+-- 9053 T4 1200000
+T2's Deadline: 9074 and idle time: 0
+-- 9060 T2 1200000
+T2's Deadline: 9014 and idle time: 0
+-- 9070 T2 1200000
+T3's Deadline: 9243 and idle time: 0
+-- 9080 T3 1200000
+T3's Deadline: 9163 and idle time: 0
+-- 9090 T3 1200000
+T6's Deadline: 9072 and idle time: 0
+-- 9097 T6 1200000
+T4's Deadline: 9164 and idle time: 0
+-- 9100 T4 1200000
+T2's Deadline: 9334 and idle time: 0
+-- 9109 T2 1200000
+T6's Deadline: 9692 and idle time: 0
+-- 9110 T6 1200000
+T6's Deadline: 9682 and idle time: 0
+-- 9110 T6 1200000
+T6's Deadline: 9672 and idle time: 0
+-- 9120 T6 1200000
+T6's Deadline: 9652 and idle time: 0
+-- 9130 T6 1200000
+T7's Deadline: 9300 and idle time: 17884
+-- 9150 T7 1200000
+T7's Deadline: 9300 and idle time: 0
+-- 9150 T7 1200000
+T0's Deadline: 9400 and idle time: 43808
+-- 9200 T0 1200000
+T0's Deadline: 9400 and idle time: 0
+-- 9200 T0 1200000
+T4's Deadline: 9399 and idle time: 0
+-- 9206 T4 1200000
+T4's Deadline: 9393 and idle time: 0
+-- 9210 T4 1200000
+T4's Deadline: 9382 and idle time: 0
+-- 9220 T4 1200000
+T5's Deadline: 9361 and idle time: 0
+-- 9222 T5 1200000
+T5's Deadline: 9339 and idle time: 0
+-- 9230 T5 1200000
+T5's Deadline: 9308 and idle time: 0
+-- 9240 T5 1200000
+T5's Deadline: 9268 and idle time: 0
+-- 9250 T5 1200000
+T5's Deadline: 9217 and idle time: 0
+-- 9260 T5 1200000
+T1's Deadline: 9356 and idle time: 0
+-- 9263 T1 1200000
+T1's Deadline: 9293 and idle time: 0
+-- 9270 T1 1200000
+T1's Deadline: 9223 and idle time: 0
+-- 9280 T1 1200000
+T7's Deadline: 9450 and idle time: 15125
+-- 9300 T7 1200000
+T7's Deadline: 9450 and idle time: 0
+-- 9300 T7 1200000
+T2's Deadline: 9599 and idle time: 0
+-- 9306 T2 1200000
+T2's Deadline: 9593 and idle time: 0
+-- 9310 T2 1200000
+T2's Deadline: 9582 and idle time: 0
+-- 9320 T2 1200000
+T0's Deadline: 9600 and idle time: 72738
+-- 9400 T0 1200000
+T4's Deadline: 9600 and idle time: 0
+-- 9400 T4 1200000
+T4's Deadline: 9599 and idle time: 0
+-- 9410 T4 1200000
+T0's Deadline: 9588 and idle time: 0
+-- 9416 T0 1200000
+T0's Deadline: 9571 and idle time: 0
+-- 9420 T0 1200000
+T5's Deadline: 9551 and idle time: 0
+-- 9422 T5 1200000
+T5's Deadline: 9528 and idle time: 0
+-- 9430 T5 1200000
+T5's Deadline: 9498 and idle time: 0
+-- 9440 T5 1200000
+T5's Deadline: 9457 and idle time: 0
+-- 9450 T5 1200000
+T7's Deadline: 9600 and idle time: 0
+-- 9460 T7 1200000
+T5's Deadline: 9660 and idle time: 0
+-- 9466 T5 1200000
+T5's Deadline: 9654 and idle time: 130947
+-- 9600 T5 1200000
+T5's Deadline: 9515 and idle time: 0
+-- 9600 T5 1200000
+T7's Deadline: 9749 and idle time: 0
+-- 9610 T7 1200000
+T0's Deadline: 9789 and idle time: 0
+-- 9616 T0 1200000
+T4's Deadline: 9772 and idle time: 0
+-- 9620 T4 1200000
+T4's Deadline: 9752 and idle time: 0
+-- 9630 T4 1200000
+T0's Deadline: 9721 and idle time: 0
+-- 9636 T0 1200000
+T5's Deadline: 9748 and idle time: 0
+-- 9639 T5 1200000
+T5's Deadline: 9720 and idle time: 0
+-- 9640 T5 1200000
+T5's Deadline: 9690 and idle time: 0
+-- 9650 T5 1200000
+T5's Deadline: 9650 and idle time: 0
+-- 9660 T5 1200000
+T2's Deadline: 9594 and idle time: 0
+-- 9669 T2 1200000
+T1's Deadline: 9625 and idle time: 0
+-- 9670 T1 1200000
+T3's Deadline: 9755 and idle time: 0
+-- 9680 T3 1200000
+T3's Deadline: 9674 and idle time: 0
+-- 9690 T3 1200000
+T6's Deadline: 9584 and idle time: 0
+-- 9697 T6 1200000
+T2's Deadline: 9914 and idle time: 0
+-- 9700 T2 1200000
+T2's Deadline: 9884 and idle time: 0
+-- 9710 T2 1200000
+T1's Deadline: 10004 and idle time: 0
+-- 9720 T1 1200000
+T1's Deadline: 9964 and idle time: 0
+-- 9720 T1 1200000
+T1's Deadline: 9925 and idle time: 0
+-- 9730 T1 1200000
+T6's Deadline: 10221 and idle time: 0
+-- 9732 T6 1200000
+T6's Deadline: 10189 and idle time: 0
+-- 9740 T6 1200000
+T7's Deadline: 9900 and idle time: 0
+-- 9750 T7 1200000
+T6's Deadline: 10099 and idle time: 0
+-- 9756 T6 1200000
+T0's Deadline: 10000 and idle time: 40029
+-- 9800 T0 1200000
+T0's Deadline: 10000 and idle time: 0
+-- 9800 T0 1200000
+T4's Deadline: 9999 and idle time: 0
+-- 9806 T4 1200000
+T4's Deadline: 9993 and idle time: 0
+-- 9810 T4 1200000
+T4's Deadline: 9982 and idle time: 0
+-- 9820 T4 1200000
+T5's Deadline: 9961 and idle time: 0
+-- 9822 T5 1200000
+T5's Deadline: 9939 and idle time: 0
+-- 9830 T5 1200000
+T5's Deadline: 9908 and idle time: 0
+-- 9840 T5 1200000
+T5's Deadline: 9868 and idle time: 0
+-- 9850 T5 1200000
+T5's Deadline: 9817 and idle time: 0
+-- 9860 T5 1200000
+T7's Deadline: 10050 and idle time: 36956
+-- 9900 T7 1200000
+T7's Deadline: 10050 and idle time: 0
+-- 9900 T7 1200000
+T2's Deadline: 10199 and idle time: 0
+-- 9906 T2 1200000
+T2's Deadline: 10193 and idle time: 0
+-- 9910 T2 1200000
+T2's Deadline: 10182 and idle time: 0
+-- 9920 T2 1200000
+TA GRADE,	Energy,	4624785000	Missed,0
+Scheduler program finished.

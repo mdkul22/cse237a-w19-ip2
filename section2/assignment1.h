@@ -39,6 +39,7 @@ typedef struct shared_variable {
 	long long realDeadline[8];
 	int prev_Alive[8];
 	long long prevTime[8];
+	long long prevIdleTime;
 } SharedVariable;
 
 

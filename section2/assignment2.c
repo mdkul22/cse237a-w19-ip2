@@ -70,7 +70,7 @@ void learn_workloads(SharedVariable* sv) {
 	printDBG("Util beyond 100%");
 	}
 	}
-
+sv->prevIdleTime = 0;
 }
 
 	// Thread functions for workloads:
@@ -110,6 +110,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	static int prev_selection = -1;
 	int temp =0;
 	long long deadline = 100000000;
+	
 	while(1){
 	for(int j=0; j < NUM_TASKS; j++)
 		{
@@ -137,6 +138,11 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 					deadline = sv->realDeadline[j];
 					prev_selection = j;
 				}
+				if(sv->realDeadline[j]<0)
+				{
+				sv->realDeadline[j] = workloadDeadlines[j];
+				sv->prevTime[j] = get_scheduler_elapsed_time_us();
+				}
 			}
 			sv->prev_Alive[j] = aliveTasks[j];
 		}
@@ -154,13 +160,17 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	}
 	TaskSelection sel;
 	sel.task = prev_selection; // The thread ID which will be scheduled. i.e., 0(BUTTON) ~ 7(BUZZER)
-	if(sv->realDeadline[prev_selection] < 30000)
-	{
-		sel.freq = 1;
-	}
-	else
+	if(sv->prevIdleTime < idleTime && idleTime!=0)
 	{
 		sel.freq = 0;
+		sv->prevIdleTime = idleTime;
+	}
+	else if(sv->realDeadline[prev_selection] > 80000)
+	{
+		sel.freq = 0;
+	}
+	else{
+	sel.freq=1;
 	}
   	return sel;
 }

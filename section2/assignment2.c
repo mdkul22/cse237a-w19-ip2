@@ -118,7 +118,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 			// task finished previously
 			if((aliveTasks[j] == 0) && (sv->prev_Alive[j]==1))
 			{
-				sv->realDeadline[j] = 0;
+				sv->realDeadline[j] = ;
 				sv->prevTime[j] = 0;
 			}
 			// task newly created
@@ -127,16 +127,20 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 				sv->realDeadline[j] = workloadDeadlines[j];
 				sv->prevTime[j] = get_scheduler_elapsed_time_us();
 				sv->newUtil += (float)sv->duration[j]/(float)workloadDeadlines[j];
+				if(sv->realDeadline[j]<deadline){
+					deadline = sv->realDeadline[j];
+					prev_selection = j;
+				}
 			}
 			// task is old
 			else if((aliveTasks[j]== 1) && (sv->prev_Alive[j]==1))
 			{
 				sv->realDeadline[j] = sv->realDeadline[j] - (get_scheduler_elapsed_time_us() - sv->prevTime[j]);
 				sv->newUtil += (float)sv->duration[j]/(float)workloadDeadlines[j];
-			}
-			if(sv->realDeadline[j]<deadline){
-				deadline = sv->realDeadline[j];
-				prev_selection = j;
+				if(sv->realDeadline[j]<deadline){
+					deadline = sv->realDeadline[j];
+					prev_selection = j;
+				}
 			}
 			sv->prev_Alive[j] = aliveTasks[j];
 		}

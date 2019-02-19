@@ -65,7 +65,7 @@ void learn_workloads(SharedVariable* sv) {
 	sv->tasks[j] = j;
 	sv->prev_Alive[j] = 0;
 	sv->prevTime[j] = 0;
-	util += sv->duration[j]/workloadDeadlines[j];
+	util += (float)sv->duration[j]/(float)workloadDeadlines[j];
 	if(util > 1)
 	{
 	printDBG("Util beyond 100%");
@@ -119,28 +119,24 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 			if((aliveTasks[j] == 0) && (sv->prev_Alive[j]==1))
 			{
 				sv->realDeadline[j] = 0;
+				sv->prevTime[j] = 0;
 			}
 			// task newly created
 			else if((aliveTasks[j]== 1) && (sv->prev_Alive[j]==0))
 			{
 				sv->realDeadline[j] = workloadDeadlines[j];
 				sv->prevTime[j] = get_scheduler_elapsed_time_us();
-				sv->currExec[j] = sv->duration[j];
 				sv->newUtil += (float)sv->duration[j]/(float)workloadDeadlines[j];
-				if(sv->realDeadline[j]<deadline){
-					deadline = sv->realDeadline[j];
-					prev_selection = j;
-				}
 			}
 			// task is old
 			else if((aliveTasks[j]== 1) && (sv->prev_Alive[j]==1))
 			{
 				sv->realDeadline[j] = sv->realDeadline[j] - (get_scheduler_elapsed_time_us() - sv->prevTime[j]);
-				sv->newUtil += (float)sv->duration[j]/workloadDeadlines[j];
-				if(sv->realDeadline[j]<deadline){
-					deadline = sv->realDeadline[j];
-					prev_selection = j;
-				}
+				sv->newUtil += (float)sv->duration[j]/(float)workloadDeadlines[j];
+			}
+			if(sv->realDeadline[j]<deadline){
+				deadline = sv->realDeadline[j];
+				prev_selection = j;
 			}
 			sv->prev_Alive[j] = aliveTasks[j];
 		}
@@ -158,7 +154,7 @@ TaskSelection select_task(SharedVariable* sv, const int* aliveTasks, long long i
 	}
 	TaskSelection sel;
 	sel.task = prev_selection; // The thread ID which will be scheduled. i.e., 0(BUTTON) ~ 7(BUZZER)
-	if(sv->newUtil>sv->oldUtil)
+	if(sv->newUtil > sv->oldUtil)
 	{
 		sel.freq = 1;
 	}
